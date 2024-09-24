@@ -1,0 +1,53 @@
+:root {
+  --main-border-radius: 5px;
+  --first-color: #230c33;
+  --second-color: #9984D4;
+  --third-color:  #c7b6f1;
+  --bg-color: #0e0b15;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--second-color);
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
