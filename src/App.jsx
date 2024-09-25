@@ -1,26 +1,20 @@
-import { useEffect, lazy, Suspense } from "react";
-import { useDispatch } from "react-redux";
+import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 
-// const HomePage = lazy(() => import("./pages/HomePage"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const CatalogPage = lazy(() => import("./pages/CatalogPage"));
 
 export default function App() {
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch();
-  // }, [dispatch]);
-
   return (
     <div id="App">
       <Suspense fallback={null}>
         <Layout>
-          HI HI HI 
-          {/* <Routes>
+          <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/catalog" element={<CatalogPage />} />
             <Route path="*" element={<Navigate to="/" />} />
-          </Routes> */}
+          </Routes>
         </Layout>
       </Suspense>
     </div>
