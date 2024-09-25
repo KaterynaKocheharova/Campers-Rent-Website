@@ -1,7 +1,7 @@
+import PageContainer from "./common/Container";
+
 const AppBar = () => {
-  return (
-    <div>APP BAR</div>
-  );
+  return <PageContainer>APP BAR</PageContainer>;
 };
 
 export default AppBar;
