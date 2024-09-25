@@ -1,12 +1,21 @@
 .header {
   background-color: var(--gray);
-  border: 1px solid var(#f2f4f7);
+  border: 1px solid #f2f4f7;
+  width: 100%;
 }
 
 .appbar-flex {
   display: flex;
-  gap: 450px;
+  gap: 10px;
   align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1440px) {
+  .appbar-flex {
+    gap: 450px;
+    justify-content: unset;
+  }
 }
 
 .navlinks-flex {

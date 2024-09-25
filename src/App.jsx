@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 
-const HomePage = lazy(() => import("./pages/HomePage"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("./pages/CatalogPage"));
 
 export default function App() {

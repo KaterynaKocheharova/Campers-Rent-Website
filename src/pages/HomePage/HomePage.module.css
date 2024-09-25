@@ -1,0 +1,32 @@
+.hero-section {
+  min-height: 696px;
+  padding-top: 260px;
+  padding-bottom: 260px;
+  background-image: url("/img/hero-image-1x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--gray);
+}
+
+@media screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx),
+  screen and (min-device-pixel-ratio: 2) {
+  .hero-section {
+    background-image: ("/img/hero-image-2x.png");
+  }
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 0.7;
+  margin-bottom: 16px;
+}
+
+.hero-text {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 40px;
+}

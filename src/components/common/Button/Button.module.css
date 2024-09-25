@@ -1,0 +1,17 @@
+.button {
+  padding: 16px 60px 16px 60px;
+  border-radius: 200px;
+  background-color: var(--red-light);
+  color: var(--white);
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  background-color: var(--red-dark);
+}
+
+.hero-link {
+  padding-left: 48.5px;
+  padding-right: 48.5px;
+}
