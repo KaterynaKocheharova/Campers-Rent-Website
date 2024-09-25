@@ -1,7 +1,12 @@
 import PageContainer from "./common/Container";
+import { Box } from "@chakra-ui/react";
 
 const AppBar = () => {
-  return <PageContainer>APP BAR</PageContainer>;
+  return (
+    <Box as="header" minH="72px" bg="var(--gray)" border="1px solid #F2F4F7">
+      <PageContainer>APP BAR</PageContainer>
+    </Box>
+  );
 };
 
 export default AppBar;

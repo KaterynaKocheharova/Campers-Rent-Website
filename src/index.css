@@ -1,14 +1,15 @@
 :root {
- 
+  --gray: #f7f7f7;
+  --gray-light: #dadde1;
+  --main-bg-color: #FFFFFF;
+  --main-font-color: #101828;
 }
 
 body {
-  /* font-family: "Poppins", sans-serif;
-  background-color: var(--bg-color);
-  color: var(--second-color);
+  font-family: "Inter", sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
   line-height: 1.5;
-  letter-spacing: 0.03em;
-  font-size: 14px; */
 }
 
 h1,
@@ -40,4 +41,3 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
