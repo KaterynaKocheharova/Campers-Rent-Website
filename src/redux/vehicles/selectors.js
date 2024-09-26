@@ -1,12 +1,5 @@
-import { createSelector } from "@reduxjs/toolkit";
-import { selectFilter } from "../filters/selectors";
-
 export const selectVehicles = (state) => state.vehicles.items;
-
-export const selectFilteredVehicles = createSelector(
-  [selectVehicles, selectFilter],
-  (contacts, filter) => {}
-);
-
-export const selectIsLoading = (state) => state.vehicles.loading;
-export const selectError = (state) => state.vehicles.error;
+export const selectIsLoadingVehicles = (state) => state.vehicles.loading;
+export const selectFetchVehiclesError = (state) => state.vehicles.error;
+export const selectTotalItems = (state) => state.vehicles.totalItems;
+export const selectCurrentPage = (state) => state.vehicles.currentPage;
