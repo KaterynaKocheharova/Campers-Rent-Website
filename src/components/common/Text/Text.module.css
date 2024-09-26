@@ -4,6 +4,16 @@
   color: var(--secondary-font-color);
 }
 
+.light {
+  opacity: 0.5;
+}
+
 .dark {
   color: var(--main-font-color);
+}
+
+.ellipses {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

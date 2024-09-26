@@ -1,5 +1,6 @@
 import VehicleImage from "../VehicleImage/VehicleImage";
 import VehicleCardHead from "../VehicleCardHead/VehicleCardHead";
+import Text from "../common/Text/Text";
 import css from "./VehicleCard.module.css";
 
 const VehicleCard = ({ vehicleData }) => {
@@ -31,9 +32,18 @@ const VehicleCard = ({ vehicleData }) => {
         <VehicleImage url={gallery[0].thumb} />
         <div className={css["card-right"]}>
           <VehicleCardHead
-            headData={{ name, rating, location, price, reviews }}
+            headData={{
+              name,
+              rating,
+              location,
+              price,
+              reviews,
+            }}
             variant="card"
           />
+          <Text variant="light" addEllipsis={true}>
+            {description}
+          </Text>
         </div>
       </div>
     </div>
