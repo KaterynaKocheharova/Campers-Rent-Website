@@ -1,0 +1,20 @@
+.input {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  border-radius: 12px;
+  background-color: var(--gray);
+  color: var(--main-font-color);
+}
+
+.input::placeholder {
+  color: var(--dark-gray);
+}
+
+.location-filter-input {
+  padding-left: 48px;
+}
+
+.location-filter-input:focus + svg {
+  fill: var(--main-font-color);
+}

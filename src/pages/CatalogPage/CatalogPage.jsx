@@ -1,5 +1,6 @@
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
+import LocationFilter from "../../components/LocationFilter/LocationFilter";
 import css from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
@@ -7,7 +8,9 @@ const CatalogPage = () => {
     <Section>
       <Container>
         <div className={css["catalog-layout"]}>
-          <div className={css["filters-sidebar"]}>Sidebar</div>
+          <div className={css["filters-sidebar"]}>
+            <LocationFilter />
+          </div>
           <div className={css["catalog"]}>Catalog</div>
         </div>
       </Container>

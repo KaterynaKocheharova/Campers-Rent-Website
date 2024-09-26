@@ -1,0 +1,46 @@
+.label {
+  display: block;
+  color: var(--dark-gray);
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding-top: 18px;
+  padding-bottom: 14px;
+  padding-left: 46px;
+  border-radius: 12px;
+  background-color: var(--gray);
+  color: var(--main-font-color);
+  border: none;
+  outline: none;
+}
+
+.map-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  fill: var(--dark-gray);
+  left: 20px;
+  top: 16px;
+}
+
+.input::placeholder {
+  color: var(--dark-gray);
+}
+
+.input:focus + svg {
+  fill: var(--main-font-color);
+}
+
+.error {
+  position: absolute;
+  font-size: 14px;
+  color: var(--red-light);
+  left: 0;
+}
