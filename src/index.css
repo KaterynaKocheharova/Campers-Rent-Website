@@ -8,6 +8,7 @@
   --sesondary-font-color: #475467;
   --red-light: #e44848;
   --red-dark: #d84343;
+  --main-border: 1px solid var(--gray-light);
 }
 
 body {
@@ -51,4 +52,5 @@ button {
   border: none;
   padding: 0;
   cursor: pointer;
+  background-color: transparent;
 }
