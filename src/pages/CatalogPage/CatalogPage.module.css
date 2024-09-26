@@ -1,0 +1,19 @@
+.catalog-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+@media screen and (min-width: 1440px) {
+  .catalog-layout {
+    flex-direction: row;
+  }
+}
+
+.filters-sidebar {
+  width: 360px;
+}
+
+.catalog {
+  width: 888px;
+}
