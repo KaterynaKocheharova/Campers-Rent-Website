@@ -1,30 +1,44 @@
 import VehicleImage from "../VehicleImage/VehicleImage";
 import VehicleCardHead from "../VehicleCardHead/VehicleCardHead";
 import Text from "../common/Text/Text";
+import CategoriesList from "../CategoriesList/CategoriesList";
 import css from "./VehicleCard.module.css";
 
 const VehicleCard = ({ vehicleData }) => {
   const {
-    id,
     name,
     description,
     gallery,
     price,
     rating,
     reviews,
-    transmission,
-    engine,
+    location,
     AC,
     bathroom,
     kitchen,
-    location,
     TV,
     radio,
     refrigerator,
     microwave,
     gas,
     water,
+    transmission,
+    engine,
   } = vehicleData;
+
+  const availableCategories = [
+    { name: "AC", available: AC },
+    { name: "Bathroom", available: bathroom },
+    { name: "Kitchen", available: kitchen },
+    { name: "TV", available: TV },
+    { name: "Radio", available: radio },
+    { name: "Refrigerator", available: refrigerator },
+    { name: "Microwave", available: microwave },
+    { name: "Gas", available: gas },
+    { name: "Water", available: water },
+  ]
+    .filter((category) => category.available)
+    .map((category) => category.name);
 
   return (
     <div className={css.card}>
@@ -41,9 +55,20 @@ const VehicleCard = ({ vehicleData }) => {
             }}
             variant="card"
           />
-          <Text variant="light" addEllipsis={true}>
-            {description}
-          </Text>
+          <div className={css["card-body"]}>
+            <Text
+              variant="light"
+              addEllipsis={true}
+              availableCategories={availableCategories}
+            >
+              {description}
+            </Text>
+            <CategoriesList
+              availableCategories={availableCategories}
+              transmission={transmission}
+              engine={engine}
+            />
+          </div>
         </div>
       </div>
     </div>
