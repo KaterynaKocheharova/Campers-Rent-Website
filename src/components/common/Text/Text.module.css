@@ -3,3 +3,7 @@
   font-weight: 500;
   color: var(--secondary-font-color);
 }
+
+.dark {
+  color: var(--main-font-color);
+}

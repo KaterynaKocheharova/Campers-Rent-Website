@@ -1,0 +1,23 @@
+.card-head-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.card-head-container-row {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: 8px;
+}
+
+.rating-location-flex {
+  display: flex;
+  gap: 16px;
+}
+

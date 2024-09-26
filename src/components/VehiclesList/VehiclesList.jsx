@@ -1,7 +1,14 @@
-const VehiclesList = ({ vehicles }) => {
-  console.log(vehicles);
+import VehicleCard from "../VehicleCard/VehicleCard";
+import css from "./VehiclesList.module.css";
 
-  return <div>VEHICLES LIST</div>;
+const VehiclesList = ({ vehicles }) => {
+  return (
+    <ul className={css.list}>
+      {vehicles.map((vehicleData) => (
+        <VehicleCard key={vehicleData.id} vehicleData={vehicleData} />
+      ))}
+    </ul>
+  );
 };
 
 export default VehiclesList;

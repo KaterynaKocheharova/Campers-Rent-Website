@@ -9,6 +9,7 @@
   --red-light: #e44848;
   --red-dark: #d84343;
   --main-border: 1px solid var(--gray-light);
+  --main-border-radius: 24px;
 }
 
 body {
@@ -36,7 +37,6 @@ ol {
 
 img {
   display: block;
-  max-width: 100%;
 }
 
 ul {
