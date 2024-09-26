@@ -8,7 +8,7 @@ export const handleError = (state, action) => {
 
 const vehiclesInitialState = {
   items: [],
-  currentPage: 0,
+  currentPage: 1,
   totalItems: 0,
   loading: null,
   error: null,
@@ -26,7 +26,11 @@ const vehiclesSlice = createSlice({
         const { items, totalItems } = action.payload;
         state.error = null;
         state.loading = null;
-        state.items = items;
+        if (state.currentPage === 1) {
+          state.items = items;
+        } else {
+          state.items = [...state.items, ...items];
+        }
         state.totalItems = totalItems;
       })
       .addCase(fetchVehicles.rejected, handleError);

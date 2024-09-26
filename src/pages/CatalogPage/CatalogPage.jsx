@@ -23,7 +23,14 @@ const CatalogPage = () => {
 
   const handleLoadMoreClick = () => {
     dispatch(changeCurrentPage(currentPage + 1));
-    dispatch(fetchVehicles({ page: currentPage + 1, limit: 4 }));
+    dispatch(fetchVehicles({ page: currentPage + 1, limit: 4 }))
+      .unwrap()
+      .then(() => {
+        window.scrollBy({
+          top: 500,
+          behavior: "smooth",
+        });
+      });
   };
 
   return (
