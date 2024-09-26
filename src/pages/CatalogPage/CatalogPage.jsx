@@ -1,6 +1,6 @@
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
-import LocationFilter from "../../components/LocationFilter/LocationFilter";
+import FiltersSidebar from "../../components/FiltersSidebar/FiltersSidebar";
 import css from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
@@ -8,10 +8,8 @@ const CatalogPage = () => {
     <Section>
       <Container>
         <div className={css["catalog-layout"]}>
-          <div className={css["filters-sidebar"]}>
-            <LocationFilter />
-          </div>
-          <div className={css["catalog"]}>Catalog</div>
+          <FiltersSidebar />
+          <div className={css.catalog}>Catalog</div>
         </div>
       </Container>
     </Section>
@@ -19,7 +17,3 @@ const CatalogPage = () => {
 };
 
 export default CatalogPage;
-
-// do markup
-// redux
-// finish markup

@@ -8,6 +8,10 @@ const LocationFilter = () => {
 
   const validateInput = (e) => {
     const value = e.target.value;
+    if (!value) {
+      setError(false);
+      return;
+    }
     const pattern = /^[A-Za-z\s]+,\s[A-Za-z\s]+$/;
 
     if (!pattern.test(value)) {
@@ -18,7 +22,7 @@ const LocationFilter = () => {
   };
 
   return (
-    <div>
+    <div className={css["location-group"]}>
       <label className={css.label} htmlFor={filterInputId}>
         Location
       </label>

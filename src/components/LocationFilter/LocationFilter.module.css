@@ -1,3 +1,7 @@
+.location-group {
+  margin-bottom: 40px;
+}
+
 .label {
   display: block;
   color: var(--dark-gray);
