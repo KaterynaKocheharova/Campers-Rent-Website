@@ -10,7 +10,11 @@ const Button = ({ children, variant }) => {
       </Link>
     );
   }
-  return <button className={clsx(css.button)}>{children}</button>;
+  return (
+    <button className={clsx(css.button)} type="submit">
+      {children}
+    </button>
+  );
 };
 
 export default Button;
