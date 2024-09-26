@@ -71,7 +71,7 @@ const VehicleCard = ({ vehicleData }) => {
               transmission={transmission}
               engine={engine}
             />
-            <Button extraClass="show-more-link" id={id}>
+            <Button extraClass="show-more-link" vehicleId={id}>
               Show more
             </Button>
           </div>
