@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const filterInitialState = {
   location: "",
   vehicleType: "",
-  vehicleAmenities: [],
+  vehicleEquipment: [],
 };
 
 const filtersSlice = createSlice({
@@ -16,14 +16,14 @@ const filtersSlice = createSlice({
     changeVehicleTypeFilter(state, action) {
       state.vehicleType = action.payload;
     },
-    changeVehicleAmenitiesFilter(state, action) {
+    changeVehicleEquipmentFilter(state, action) {
       const currentAmenity = action.payload;
-      if (state.vehicleAmenities.includes(currentAmenity)) {
-        state.vehicleAmenities = state.vehicleAmenities.filter(
+      if (state.vehicleEquipment.includes(currentAmenity)) {
+        state.vehicleEquipment = state.vehicleEquipment.filter(
           (vehicleAmenity) => vehicleAmenity !== currentAmenity
         );
       } else {
-        state.vehicleAmenities.push(currentAmenity);
+        state.vehicleEquipment.push(currentAmenity);
       }
     },
   },
@@ -32,6 +32,6 @@ const filtersSlice = createSlice({
 export const {
   changeLocationFilter,
   changeVehicleTypeFilter,
-  changeVehicleAmenitiesFilter,
+  changeVehicleEquipmentFilter,
 } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

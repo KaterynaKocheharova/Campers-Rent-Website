@@ -23,3 +23,7 @@
   font-weight: 500;
   letter-spacing: -0.005em;
 }
+
+.selected-button {
+  border: 1px solid var(--red-light);
+}
