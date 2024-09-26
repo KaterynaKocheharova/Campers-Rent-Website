@@ -22,7 +22,7 @@ const persistConfiguration = {
 export const store = configureStore({
   reducer: {
     filters: filtersReducer,
-    contacts: vehiclesReducer,
+    vehicles: vehiclesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
