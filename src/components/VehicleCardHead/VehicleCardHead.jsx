@@ -1,4 +1,6 @@
 import Rating from "./Rating/Rating";
+import Location from "./Location/Location";
+import PriceAndLikeGroup from "./PriceAndLikeGroup/PriceAndLikeGroup";
 import clsx from "clsx";
 import css from "./VehicleCardHead.module.css";
 
@@ -15,11 +17,12 @@ const VehicleCardHead = ({
     >
       <div>
         <h2 className={css["title"]}>{name}</h2>
-
         <div className={css["rating-location-flex"]}>
           <Rating rating={rating} reviews={reviews} />
+          <Location location={location} />
         </div>
       </div>
+      <PriceAndLikeGroup price={price} />
     </div>
   );
 };

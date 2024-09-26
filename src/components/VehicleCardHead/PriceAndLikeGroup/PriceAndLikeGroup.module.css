@@ -1,0 +1,21 @@
+.flex {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.icon {
+  cursor: pointer;
+  width: 26px;
+  height: 24px;
+}
+
+.favorite {
+  fill: var(--red-light);
+}

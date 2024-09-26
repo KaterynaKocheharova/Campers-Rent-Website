@@ -3,6 +3,7 @@
   height: 320px;
   overflow: hidden;
   border-radius: 10px;
+  margin-right: 24px;
 }
 
 .image-container img {

@@ -29,10 +29,12 @@ const VehicleCard = ({ vehicleData }) => {
     <div className={css.card}>
       <div className={css["card-layout"]}>
         <VehicleImage url={gallery[0].thumb} />
-        <VehicleCardHead
-          headData={{ name, rating, location, price, reviews }}
-          variant="card"
-        />
+        <div className={css["card-right"]}>
+          <VehicleCardHead
+            headData={{ name, rating, location, price, reviews }}
+            variant="card"
+          />
+        </div>
       </div>
     </div>
   );
