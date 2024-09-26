@@ -29,7 +29,7 @@ const CatalogPage = () => {
   return (
     <Section>
       <Container>
-        <div className={css["catalog-layout"]}>
+        <div className={css["page-layout"]}>
           <FiltersSidebar />
           <div className={css.catalog}>
             <VehiclesList vehicles={vehicles} />

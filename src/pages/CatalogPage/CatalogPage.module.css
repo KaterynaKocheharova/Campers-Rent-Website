@@ -1,17 +1,15 @@
-.catalog-layout {
+.page-layout {
   display: flex;
   flex-direction: column;
   gap: 64px;
 }
 
 @media screen and (min-width: 1440px) {
-  .catalog-layout {
+  .page-layout {
     flex-direction: row;
   }
 }
 
-
 .catalog {
   width: 888px;
 }
-
