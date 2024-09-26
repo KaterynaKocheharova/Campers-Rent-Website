@@ -2,10 +2,13 @@ import VehicleImage from "../VehicleImage/VehicleImage";
 import VehicleCardHead from "../VehicleCardHead/VehicleCardHead";
 import Text from "../common/Text/Text";
 import CategoriesList from "../CategoriesList/CategoriesList";
+import Button from "../common/Button/Button";
+
 import css from "./VehicleCard.module.css";
 
 const VehicleCard = ({ vehicleData }) => {
   const {
+    id,
     name,
     description,
     gallery,
@@ -68,6 +71,9 @@ const VehicleCard = ({ vehicleData }) => {
               transmission={transmission}
               engine={engine}
             />
+            <Button extraClass="show-more-link" id={id}>
+              Show more
+            </Button>
           </div>
         </div>
       </div>
