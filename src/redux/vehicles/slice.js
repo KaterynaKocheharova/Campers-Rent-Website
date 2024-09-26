@@ -23,7 +23,9 @@ const vehiclesSlice = createSlice({
         state.loading = "fetching-vehicles";
       })
       .addCase(fetchVehicles.fulfilled, (state, action) => {
+        console.log(action.payload);
         const { items, totalItems } = action.payload;
+
         state.error = null;
         state.loading = null;
         if (state.currentPage === 1) {

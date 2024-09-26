@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectVehicles } from "../../redux/vehicles/selectors";
+import {
+  selectVehicles,
+  selectCurrentPage,
+} from "../../redux/vehicles/selectors";
 import { fetchVehicles } from "../../redux/vehicles/operations";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
@@ -12,10 +15,12 @@ import css from "./CatalogPage.module.css";
 const CatalogPage = () => {
   const vehicles = useSelector(selectVehicles);
   const dispatch = useDispatch();
+  const currentPage = useSelector(selectCurrentPage);
 
   useEffect(() => {
-    dispatch(fetchVehicles({ page: 1, limit: 4 }));
-  }, [dispatch]);
+    if (currentPage === 1)
+      dispatch(fetchVehicles({ page: currentPage, limit: 4 }));
+  }, [dispatch, currentPage]);
 
   return (
     <Section>
