@@ -1,4 +1,4 @@
-import CategoryItem from "./CategoryItem/CategoryItem";
+import CategoryItem from "../CategoryItem/CategoryItem";
 import { getIconByCategoryName } from "../../utils/icons";
 import css from "./CategoriesList.module.css";
 
