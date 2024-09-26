@@ -1,1 +1,4 @@
-export const selectFilter = (state) => state.filters.filter;
+export const selectLocationFilter = (state) => state.filters.location;
+export const selectVehicleTypeFilter = (state) => state.filters.vehicleType;
+export const selectVehicleAmenitiesFilter = (state) =>
+  state.filters.vehicleAmenities;
