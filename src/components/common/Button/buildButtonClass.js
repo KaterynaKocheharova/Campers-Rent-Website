@@ -1,1 +1,7 @@
-export const buildButtonClass = (variant) => {};
+export const buildButtonClass = (variant) => {
+    switch(variant) {
+        case  "search-button":
+            return 
+
+    }
+};

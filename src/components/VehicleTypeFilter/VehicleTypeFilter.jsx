@@ -1,5 +1,6 @@
 import FilterButtonsGrid from "../FilterButtonsGrid/FilterButtonsGrid";
 import FilterButton from "../FilterButton/FilterButton";
+import FilterTitle from "../FilterTitle/FilterTitle";
 
 const vehicleTypeFilters = [
   {
@@ -18,15 +19,18 @@ const vehicleTypeFilters = [
 
 const VehicleTypeFilter = () => {
   return (
-    <FilterButtonsGrid>
-      {vehicleTypeFilters.map((equipmentFilter, index) => (
-        <FilterButton
-          key={index}
-          filterData={equipmentFilter}
-          variant="vehicle-type"
-        />
-      ))}
-    </FilterButtonsGrid>
+    <>
+      <FilterTitle>Vehicle type</FilterTitle>
+      <FilterButtonsGrid>
+        {vehicleTypeFilters.map((equipmentFilter, index) => (
+          <FilterButton
+            key={index}
+            filterData={equipmentFilter}
+            variant="vehicle-type"
+          />
+        ))}
+      </FilterButtonsGrid>
+    </>
   );
 };
 
