@@ -3,6 +3,7 @@
   border-radius: 200px;
   background-color: var(--red-light);
   color: var(--white);
+  transition: background-color 250ms linear;
 }
 
 .button:hover,
@@ -26,4 +27,21 @@
   width: 166px;
   padding-right: 40px;
   padding-left: 40px;
+}
+
+.load-more-button {
+  padding-right: 32px;
+  padding-left: 32px;
+  background-color: transparent;
+  border: var(--main-border);
+  color: var(--main-font-color);
+  transition: border 250ms linear;
+  align-self: flex-start;
+}
+
+.load-more-button:hover,
+.load-more-button:active,
+.load-more-button:focus {
+  background-color: transparent;
+  border: 1px solid var(--red-dark);
 }

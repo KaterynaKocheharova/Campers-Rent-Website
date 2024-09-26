@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import clsx from "clsx";
 import css from "./Button.module.css";
 
-const Button = ({ children, extraClass, vehicleId }) => {
+const Button = ({ children, extraClass, vehicleId, handleClick }) => {
   if (extraClass === "hero-link") {
     return (
       <Link className={clsx(css.button, css["hero-link"])} to="/catalog">
@@ -24,6 +24,7 @@ const Button = ({ children, extraClass, vehicleId }) => {
 
   return (
     <button
+      onClick={handleClick}
       className={clsx(css.button, extraClass && css[extraClass])}
       type="submit"
     >
