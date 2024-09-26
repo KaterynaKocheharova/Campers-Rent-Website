@@ -1,24 +1,32 @@
+import { useDispatch, useSelector } from "react-redux";
+import { selectLocationFilter } from "../../redux/filters/selectors";
+import { changeLocationFilter } from "../../redux/filters/slice";
 import { useState } from "react";
 import { useId } from "react";
 import css from "./LocationFilter.module.css";
 
 const LocationFilter = () => {
-  const [error, setError] = useState("");
   const filterInputId = useId();
 
-  const validateInput = (e) => {
-    const value = e.target.value;
-    if (!value) {
-      setError(false);
-      return;
-    }
-    const pattern = /^[A-Za-z\s]+,\s[A-Za-z\s]+$/;
+  // validation handling
+  const [error, setError] = useState("");
+
+  const validateInput = (value) => {
+    const pattern = /^([A-Za-z\s]+,\s[A-Za-z\s]+)?$/;
 
     if (!pattern.test(value)) {
       setError('Please enter a location in the format: "Kiev, Ukraine"');
     } else {
       setError("");
     }
+  };
+
+  // changing filter
+  const location = useSelector(selectLocationFilter);
+  const dispatch = useDispatch();
+
+  const handleLocationFilterChange = (value) => {
+    dispatch(changeLocationFilter(value));
   };
 
   return (
@@ -28,12 +36,17 @@ const LocationFilter = () => {
       </label>
       <div className={css["input-group"]}>
         <input
+          value={location}
           className={css.input}
           id={filterInputId}
           type="text"
           placeholder="City"
-          onBlur={validateInput}
+          onBlur={(e) => validateInput(e.target.value)}
           title='Please enter a location in the format: "Kiev, Ukraine"'
+          onChange={(e) => {
+            setError(false);
+            handleLocationFilterChange(e.target.value);
+          }}
         />
         <svg className={css["map-icon"]}>
           <use href="/public/sprite.svg#icon-map"></use>
