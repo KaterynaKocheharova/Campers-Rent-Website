@@ -23,8 +23,7 @@ const vehiclesSlice = createSlice({
         state.loading = "fetching-vehicles";
       })
       .addCase(fetchVehicles.fulfilled, (state, action) => {
-        console.log(action.payload);
-        const { items, totalItems } = action.payload;
+        const { items, total } = action.payload;
 
         state.error = null;
         state.loading = null;
@@ -33,7 +32,7 @@ const vehiclesSlice = createSlice({
         } else {
           state.items = [...state.items, ...items];
         }
-        state.totalItems = totalItems;
+        state.totalItems = total;
       })
       .addCase(fetchVehicles.rejected, handleError);
   },

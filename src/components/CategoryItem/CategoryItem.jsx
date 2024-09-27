@@ -1,7 +1,6 @@
 import css from "./CategoryItem.module.css";
 
 const CategoryItem = ({ icon, text }) => {
-  console.log(icon);
   return (
     <div className={css.item}>
       <svg className={css.icon}>
