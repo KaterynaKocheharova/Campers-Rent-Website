@@ -140,7 +140,7 @@ const EquipmentFilter = () => {
                 changeFilterHandler={() =>
                   dispatch(changeVehicleTransmissionFilter())
                 }
-                filterData={equipmentFilter}
+                filterData={{ ...equipmentFilter, name: "Automatic" }}
               />
             );
           } else {

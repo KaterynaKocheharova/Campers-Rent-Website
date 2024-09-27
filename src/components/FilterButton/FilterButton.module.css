@@ -1,7 +1,8 @@
 .button {
   width: calc((100% - 24px) / 3);
-  padding-top: 16px;
-  padding-bottom: 16px;
+  height: 96px;
+  /* padding-top: 16px;
+  padding-bottom: 16px; */
   border-radius: 12px;
   border: var(--main-border);
   display: flex;
@@ -21,6 +22,7 @@
   font-weight: 500;
   letter-spacing: -0.005em;
   max-width: 80px;
+  line-height: 1.5;
   text-transform: capitalize;
   text-align: center;
   word-wrap: break-word; 
