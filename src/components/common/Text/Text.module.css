@@ -17,3 +17,8 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+.underlined {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

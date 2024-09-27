@@ -7,6 +7,7 @@ import css from "./VehicleCardHead.module.css";
 const VehicleCardHead = ({
   headData: { name, rating, location, price, reviews },
   variant,
+  isUnderlined
 }) => {
   return (
     <div
@@ -18,11 +19,11 @@ const VehicleCardHead = ({
       <div>
         <h2 className={css["title"]}>{name}</h2>
         <div className={css["rating-location-flex"]}>
-          <Rating rating={rating} reviews={reviews} />
+          <Rating rating={rating} reviews={reviews} isUnderlined={isUnderlined} />
           <Location location={location} />
         </div>
       </div>
-      <PriceAndLikeGroup price={price} />
+      <PriceAndLikeGroup price={price} variant={variant} />
     </div>
   );
 };
