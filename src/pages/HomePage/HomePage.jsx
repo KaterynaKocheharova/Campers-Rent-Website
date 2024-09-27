@@ -10,7 +10,7 @@ const HomePage = () => {
         <p className={css["hero-text"]}>
           You can find everything you want in our catalog
         </p>
-        <Button variant="hero-link">View Now</Button>
+        <Button extraClass="hero-link">View Now</Button>
       </Container>
     </section>
   );
