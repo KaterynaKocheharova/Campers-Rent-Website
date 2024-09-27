@@ -17,7 +17,7 @@ export const equipmentFilters = [
     icon: "icon-wind",
   },
   {
-    name: "Kitchen",
+    name: "kitchen",
     icon: "icon-coffee",
   },
   {
@@ -25,7 +25,7 @@ export const equipmentFilters = [
     icon: "icon-tv",
   },
   {
-    name: "Bathroom",
+    name: "bathroom",
     icon: "icon-droplet",
   },
 ];

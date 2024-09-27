@@ -31,7 +31,7 @@ const filtersSlice = createSlice({
       if (state.transmission === "Manual" || state.transmission === "") {
         state.transmission = "Automatic";
       } else {
-        state.transmission = "Manual";
+        state.transmission = "";
       }
     },
   },

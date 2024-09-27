@@ -21,7 +21,6 @@
 // );
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { equipmentFilters } from "../../components/EquipmentFilter/EquipmentFilter";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
@@ -102,7 +101,6 @@ axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 //   }
 // );
 
-
 export const fetchVehicles = createAsyncThunk(
   "vehicles/fetchAll",
   async ({ page, limit, filters = {} }, thunkAPI) => {
@@ -119,24 +117,17 @@ export const fetchVehicles = createAsyncThunk(
       if (location) {
         params.location = location;
       }
-      // if (vehicleType) {
-      //   params.form = vehicleType.toLowerCase();
-      // }
-      // if (transmission) {
-      //   params.transmission = transmission.toLowerCase();
-      // }
-      // equipmentFilters.forEach((equipment) => {
-      //   if (vehicleEquipment.includes(equipment.name)) {
-      //     if (
-      //       equipment.name.toLowerCase() === "ac" ||
-      //       equipment.name.toLowerCase() === "tv"
-      //     ) {
-      //       params[equipment.name.toUpperCase()] = true;
-      //     } else {
-      //       params[equipment.name.toLowerCase()] = true;
-      //     }
-      //   }
-      // });
+      if (vehicleType) {
+        params.form = vehicleType.toLowerCase();
+      }
+      if (transmission) {
+        params.transmission = transmission.toLowerCase();
+      }
+      ["AC", "kitchen", "TV", "bathroom"].forEach((equipment) => {
+        if (vehicleEquipment.includes(equipment)) {
+          params[equipment] = true;
+        }
+      });
 
       // Add pagination params last
       params.page = page;
