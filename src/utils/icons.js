@@ -32,3 +32,4 @@ export const categories = [
 
 export const getIconByCategoryName = (categoryName) =>
   categories.find((category) => categoryName === category.name).icon;
+
