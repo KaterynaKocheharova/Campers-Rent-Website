@@ -1,0 +1,36 @@
+.link-container {
+  position: relative;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 68px;
+}
+
+.link-container::after {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: -24px;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--gray-light);
+}
+
+.link {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--main-font-color);
+}
+
+.active-link::after {
+    z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: -26px;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: var(--red-light);
+}

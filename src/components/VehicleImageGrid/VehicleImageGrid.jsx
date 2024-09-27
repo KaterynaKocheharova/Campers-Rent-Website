@@ -5,9 +5,9 @@ const VehicleImageGrid = ({ images }) => {
   return (
     <ul className={css.grid}>
       {images.map((image, index) => (
-        // also pass url
-        <VehicleImage key={index} />
+        <VehicleImage key={index} url={image} />
       ))}
+      <VehicleImage url={images[0]} />
     </ul>
   );
 };

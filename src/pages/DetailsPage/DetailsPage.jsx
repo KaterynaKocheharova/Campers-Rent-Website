@@ -1,11 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useMemo } from "react";
+import { useParams, Outlet } from "react-router-dom";
 import { getVehicleById } from "../../non-redux-api/getVehicleById";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
 import Error from "../../components/common/Error/Error";
 import Loader from "../../components/common/Loader/Loader";
 import VehicleCardHead from "../../components/VehicleCardHead/VehicleCardHead";
+import VehicleImageGrid from "../../components/VehicleImageGrid/VehicleImageGrid";
+import Text from "../../components/common/Text/Text";
+import VehicleDetailsTabs from "../../components/VehicleDetailsTabs/VehicleDetailsTabs";
 import { useState, useEffect } from "react";
+import css from "./DetailsPage.module.css";
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -53,22 +58,35 @@ const DetailsPage = () => {
     microwave,
     gas,
     water,
-    gallery,
+    gallery = [],
     reviews,
   } = vehicleData || {};
+
+  const images = useMemo(() => {
+    return gallery.map((galleryItem) => galleryItem.original);
+  }, [gallery]);
+
+  console.log(images);
 
   return (
     <Section>
       <Container>
-        {vehicleData && (
-          <VehicleCardHead
-            headData={{ name, rating, location, price, reviews }}
-            variant="details"
-            isUnderlined
-          />
-        )}
+        <div className={css.top}>
+          {vehicleData && (
+            <VehicleCardHead
+              headData={{ name, rating, location, price, reviews }}
+              variant="details"
+              isUnderlined
+            />
+          )}
+          <VehicleImageGrid images={images} />
+          <Text variant="light">{description}</Text>
+        </div>
+
         {error && <Error />}
         {loading && <Loader />}
+        <VehicleDetailsTabs />
+        <Outlet />
       </Container>
     </Section>
   );

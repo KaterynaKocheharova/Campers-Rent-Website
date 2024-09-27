@@ -1,4 +1,5 @@
 .grid {
   display: flex;
-  justify-content: flex-between;
+  justify-content: space-between;
+  margin-bottom: 24px;
 }
