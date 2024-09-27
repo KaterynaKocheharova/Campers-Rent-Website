@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const filterInitialState = {
   location: "",
   vehicleType: "",
+  transmission: "",
   vehicleEquipment: [],
 };
 
@@ -26,6 +27,13 @@ const filtersSlice = createSlice({
         state.vehicleEquipment.push(currentAmenity);
       }
     },
+    changeVehicleTransmissionFilter(state) {
+      if (state.transmission === "Manual" || state.transmission === "") {
+        state.transmission = "Automatic";
+      } else {
+        state.transmission = "Manual";
+      }
+    },
   },
 });
 
@@ -33,5 +41,6 @@ export const {
   changeLocationFilter,
   changeVehicleTypeFilter,
   changeVehicleEquipmentFilter,
+  changeVehicleTransmissionFilter,
 } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

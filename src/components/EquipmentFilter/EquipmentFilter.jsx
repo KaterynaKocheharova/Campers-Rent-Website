@@ -1,18 +1,20 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectVehicleEquipmentFilter } from "../../redux/filters/selectors";
-import { changeVehicleEquipmentFilter } from "../../redux/filters/slice";
+import {
+  selectVehicleEquipmentFilter,
+  selectVehicleTransmissionFilter,
+} from "../../redux/filters/selectors";
+import {
+  changeVehicleEquipmentFilter,
+  changeVehicleTransmissionFilter,
+} from "../../redux/filters/slice";
 import FilterButtonsGrid from "../FilterButtonsGrid/FilterButtonsGrid";
 import FilterButton from "../FilterButton/FilterButton";
 import FilterTitle from "../FilterTitle/FilterTitle";
 
-const equipmentFilters = [
+export const equipmentFilters = [
   {
     name: "AC",
     icon: "icon-wind",
-  },
-  {
-    name: "Automatic",
-    icon: "icon-diagram",
   },
   {
     name: "Kitchen",
@@ -30,6 +32,9 @@ const equipmentFilters = [
 
 const EquipmentFilter = () => {
   const equipment = useSelector(selectVehicleEquipmentFilter);
+  const vehicleTransmissionFilter = useSelector(
+    selectVehicleTransmissionFilter
+  );
   const dispatch = useDispatch();
 
   const handleChangeVehicleEquipmentFilter = (clickedEquipment) => {
@@ -50,6 +55,14 @@ const EquipmentFilter = () => {
             variant="equipment"
           />
         ))}
+        <FilterButton
+          isSelected={vehicleTransmissionFilter === "Automatic"}
+          variant="equipment"
+          changeFilterHandler={() =>
+            dispatch(changeVehicleTransmissionFilter())
+          }
+          filterData={{ icon: "icon-diagram" }}
+        />
       </FilterButtonsGrid>
     </>
   );

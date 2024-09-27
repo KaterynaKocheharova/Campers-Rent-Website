@@ -25,7 +25,7 @@ const CatalogPage = () => {
     () => Math.ceil(totalItems / limit),
     [totalItems, limit]
   );
-  
+
   useEffect(() => {
     if (currentPage === 1) {
       dispatch(fetchVehicles({ page: currentPage, limit }));
