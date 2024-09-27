@@ -6,8 +6,8 @@ const Loader = () => {
   return (
     <div className={css.backdrop}>
       <div className={css["loader-group"]}>
-        <Text>LOADER</Text>
-        <Circles color="red" />
+        <Text>Loading</Text>
+        <Circles color="var(--red-light)" />
       </div>
     </div>
   );
