@@ -7,15 +7,15 @@ import FilterTitle from "../FilterTitle/FilterTitle";
 
 const vehicleTypeFilters = [
   {
-    name: "Van",
+    name: "panelTruck",
     icon: "icon-3grid",
   },
   {
-    name: "Fully Integrated",
+    name: "fullyIntegrated",
     icon: "icon-4grid",
   },
   {
-    name: "Alclove",
+    name: "alcove",
     icon: "icon-9grid",
   },
 ];

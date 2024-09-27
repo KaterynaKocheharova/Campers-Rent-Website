@@ -20,7 +20,7 @@ export const fetchVehicles = createAsyncThunk(
         params.location = location;
       }
       if (vehicleType) {
-        params.form = vehicleType.toLowerCase();
+        params.form = vehicleType;
       }
       if (transmission) {
         params.transmission = transmission.toLowerCase();
@@ -31,7 +31,6 @@ export const fetchVehicles = createAsyncThunk(
         }
       });
 
-      // Add pagination params last
       params.page = page;
       params.limit = limit;
 
@@ -42,7 +41,7 @@ export const fetchVehicles = createAsyncThunk(
       if (error.message === "Request failed with status code 404") {
         return thunkAPI.rejectWithValue("Items matching your filter not found");
       } else {
-         return thunkAPI.rejectWithValue(error.message);
+        return thunkAPI.rejectWithValue(error.message);
       }
     }
   }
