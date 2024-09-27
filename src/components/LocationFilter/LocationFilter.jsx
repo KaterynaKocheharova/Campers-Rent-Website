@@ -8,20 +8,18 @@ import css from "./LocationFilter.module.css";
 const LocationFilter = () => {
   const filterInputId = useId();
 
-  // validation handling
   const [error, setError] = useState("");
 
   const validateInput = (value) => {
     const pattern = /^([A-Za-z\s]+,\s[A-Za-z\s]+)?$/;
 
     if (!pattern.test(value)) {
-      setError('Please enter a location in the format: "Kiev, Ukraine"');
+      setError('Please enter a location in the format: "Ukraine, city name"');
     } else {
       setError("");
     }
   };
 
-  // changing filter
   const location = useSelector(selectLocationFilter);
   const dispatch = useDispatch();
 
