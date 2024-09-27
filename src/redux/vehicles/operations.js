@@ -39,7 +39,11 @@ export const fetchVehicles = createAsyncThunk(
 
       return data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      if (error.message === "Request failed with status code 404") {
+        return thunkAPI.rejectWithValue("Items matching your filter not found");
+      } else {
+         return thunkAPI.rejectWithValue(error.message);
+      }
     }
   }
 );

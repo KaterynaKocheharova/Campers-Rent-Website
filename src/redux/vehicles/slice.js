@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchVehicles } from "./operations";
 
 export const handleError = (state, action) => {
-  state.loading = null;
+  state.loading = false;
   state.error = action.payload;
 };
 
@@ -10,7 +10,7 @@ const vehiclesInitialState = {
   items: [],
   currentPage: 1,
   totalItems: 0,
-  loading: null,
+  loading: false,
   error: null,
 };
 
@@ -20,13 +20,13 @@ const vehiclesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchVehicles.pending, (state) => {
-        state.loading = "fetching-vehicles";
+        state.loading = true;
       })
       .addCase(fetchVehicles.fulfilled, (state, action) => {
         const { items, total } = action.payload;
 
         state.error = null;
-        state.loading = null;
+        state.loading = false;
         if (state.currentPage === 1) {
           state.items = items;
         } else {

@@ -4,6 +4,8 @@ import {
   selectVehicles,
   selectCurrentPage,
   selectTotalItems,
+  selectIsLoadingVehicles,
+  selectError,
 } from "../../redux/vehicles/selectors";
 import { fetchVehicles } from "../../redux/vehicles/operations";
 import Section from "../../components/common/Section/Section";
@@ -11,9 +13,13 @@ import Container from "../../components/common/Container/Container";
 import FiltersSidebar from "../../components/FiltersSidebar/FiltersSidebar";
 import VehiclesList from "../../components/VehiclesList/VehiclesList";
 import LoadMoreButton from "../../components/LoadMoreButton/LoadMoreButton";
+import Error from "../../components/common/Error/Error";
+import Loader from "../../components/common/Loader/Loader";
 import css from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
+  const isLoading = useSelector(selectIsLoadingVehicles);
+  const error = useSelector(selectError);
   const vehicles = useSelector(selectVehicles);
   const totalItems = useSelector(selectTotalItems);
   const currentPage = useSelector(selectCurrentPage);
@@ -35,6 +41,8 @@ const CatalogPage = () => {
   return (
     <Section>
       <Container>
+        {error && <Error />}
+        {isLoading && <Loader />}
         <div className={css["page-layout"]}>
           <FiltersSidebar />
           <div className={css.catalog}>

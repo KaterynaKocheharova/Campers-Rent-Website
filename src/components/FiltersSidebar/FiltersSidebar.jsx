@@ -19,6 +19,7 @@ const FiltersSidebar = () => {
   const vehicleEquipment = useSelector(selectVehicleEquipmentFilter);
   const vehicleType = useSelector(selectVehicleTypeFilter);
   const transmission = useSelector(selectVehicleTransmissionFilter);
+
   const handleSearchByFilter = () => {
     dispatch(changeCurrentPage(1));
     dispatch(
@@ -29,7 +30,7 @@ const FiltersSidebar = () => {
           location,
           vehicleEquipment,
           vehicleType,
-          transmission
+          transmission,
         },
       })
     );
