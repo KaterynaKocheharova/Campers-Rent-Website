@@ -1,0 +1,9 @@
+.features-container {
+  padding: 44px 52px;
+  border-radius: 10px;
+  background-color: var(--gray);
+}
+
+.features-content {
+  width: 527px;
+}

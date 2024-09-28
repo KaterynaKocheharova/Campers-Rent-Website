@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { useParams, Outlet } from "react-router-dom";
-import { getVehicleById } from "../../non-redux-api/getVehicleById";
+import { useFetchVehicleDeatils } from "../../hooks/useFetchVehicleDetails";
+import { Outlet } from "react-router-dom";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
 import Error from "../../components/common/Error/Error";
@@ -9,31 +9,10 @@ import VehicleCardHead from "../../components/VehicleCardHead/VehicleCardHead";
 import VehicleImageGrid from "../../components/VehicleImageGrid/VehicleImageGrid";
 import Text from "../../components/common/Text/Text";
 import VehicleDetailsTabs from "../../components/VehicleDetailsTabs/VehicleDetailsTabs";
-import { useState, useEffect } from "react";
 import css from "./DetailsPage.module.css";
 
 const DetailsPage = () => {
-  const { id } = useParams();
-  const [vehicleData, setVehicleData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const getVehicle = async () => {
-      try {
-        setLoading(true);
-        setError(false);
-        const { data } = await getVehicleById(id);
-        setVehicleData(data);
-      } catch (error) {
-        setError(true);
-      }
-
-      setLoading(false);
-    };
-
-    getVehicle();
-  }, [id]);
+  const { vehicleData, error, loading } = useFetchVehicleDeatils();
 
   const {
     name,
@@ -41,23 +20,6 @@ const DetailsPage = () => {
     rating,
     location,
     description,
-    form,
-    length,
-    width,
-    height,
-    tank,
-    consumption,
-    transmission,
-    engine,
-    AC,
-    bathroom,
-    kitchen,
-    TV,
-    radio,
-    refrigerator,
-    microwave,
-    gas,
-    water,
     gallery = [],
     reviews,
   } = vehicleData || {};
@@ -66,27 +28,28 @@ const DetailsPage = () => {
     return gallery.map((galleryItem) => galleryItem.original);
   }, [gallery]);
 
-  console.log(images);
-
   return (
     <Section>
       <Container>
         <div className={css.top}>
-          {vehicleData && (
+          {name && rating && location && price && reviews && (
             <VehicleCardHead
               headData={{ name, rating, location, price, reviews }}
               variant="details"
               isUnderlined
             />
           )}
-          <VehicleImageGrid images={images} />
+          {vehicleData && <VehicleImageGrid images={images} />}
+
           <Text variant="light">{description}</Text>
         </div>
 
         {error && <Error />}
         {loading && <Loader />}
         <VehicleDetailsTabs />
-        <Outlet />
+        <div className={css.bottom}>
+          <Outlet />
+        </div>
       </Container>
     </Section>
   );
