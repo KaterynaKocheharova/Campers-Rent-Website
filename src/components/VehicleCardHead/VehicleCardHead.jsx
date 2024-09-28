@@ -5,9 +5,9 @@ import clsx from "clsx";
 import css from "./VehicleCardHead.module.css";
 
 const VehicleCardHead = ({
-  headData: { name, rating, location, price, reviews },
+  headData: { name, rating, location, price, reviews, id },
   variant,
-  isUnderlined
+  isUnderlined,
 }) => {
   return (
     <div
@@ -19,11 +19,15 @@ const VehicleCardHead = ({
       <div>
         <h2 className={css["title"]}>{name}</h2>
         <div className={css["rating-location-flex"]}>
-          <Rating rating={rating} reviews={reviews} isUnderlined={isUnderlined} />
+          <Rating
+            rating={rating}
+            reviews={reviews}
+            isUnderlined={isUnderlined}
+          />
           <Location location={location} />
         </div>
       </div>
-      <PriceAndLikeGroup price={price} variant={variant} />
+      <PriceAndLikeGroup price={price} variant={variant} id={id} />
     </div>
   );
 };

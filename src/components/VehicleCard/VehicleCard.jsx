@@ -55,6 +55,7 @@ const VehicleCard = ({ vehicleData }) => {
               location,
               price,
               reviews,
+              id
             }}
             variant="card"
           />
