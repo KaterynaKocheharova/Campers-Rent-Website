@@ -3,3 +3,7 @@
   flex-wrap: wrap;
   gap: 8px;
 }
+
+.mb100 {
+  margin-bottom: 100px;
+}

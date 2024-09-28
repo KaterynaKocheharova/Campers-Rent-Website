@@ -1,7 +1,7 @@
 :root {
   --gray: #f7f7f7;
   --gray-light: #dadde1;
-  --gray-light-semi-transparent: rgba(218, 221, 225, 0.5);
+  --gray-light-semi-transparent: #dadde180;
   --dark-gray: #6c717b;
   --main-bg-color: #ffffff;
   --white: #ffffff;

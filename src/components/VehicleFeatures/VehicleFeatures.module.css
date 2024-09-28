@@ -1,4 +1,5 @@
 .features-container {
+  min-height: 631px;
   padding: 44px 52px;
   border-radius: 10px;
   background-color: var(--gray);
@@ -6,4 +7,6 @@
 
 .features-content {
   width: 527px;
+  display: flex;
+  flex-direction: column;
 }
