@@ -1,0 +1,7 @@
+.text {
+  font-weight: 500;
+}
+
+.capitalized {
+    text-transform: capitalize;
+  }

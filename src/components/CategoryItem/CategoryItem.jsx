@@ -1,5 +1,6 @@
-import { MdGasMeter,  MdOutlineMicrowave} from "react-icons/md";
+import { MdGasMeter, MdOutlineMicrowave } from "react-icons/md";
 import { RiFridgeLine } from "react-icons/ri";
+import ThickText from "../common/ThickText/TickText";
 
 import css from "./CategoryItem.module.css";
 
@@ -14,7 +15,7 @@ const CategoryItem = ({ icon, text }) => {
       {text === "Microwave" && <MdOutlineMicrowave className={css.icon} />}
       {text === "Gas" && <MdGasMeter className={css.icon} />}
       {text === "Refrigerator" && <RiFridgeLine className={css.icon} />}
-      <p className={css.text}>{text}</p>
+      <ThickText>{text}</ThickText>
     </div>
   );
 };
