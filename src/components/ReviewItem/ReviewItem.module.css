@@ -1,7 +1,12 @@
+.item {
+  max-width: 631px;
+}
+
 .top-flex {
   display: flex;
   gap: 16px;
   align-items: center;
+  margin-bottom: 16px;
 }
 
 .right-flex {

@@ -1,9 +1,13 @@
 import Avatar from "./Avatar/Avatar";
 import ThickText from "../common/ThickText/TickText";
 import RatingStars from "./RatingStars/RatingStars";
+import Text from "../common/Text/Text";
+
 import css from "./ReviewItem.module.css";
 
-const ReviewItem = ({ reviewData: { reviewer_name, reviewer_rating } }) => {
+const ReviewItem = ({
+  reviewData: { reviewer_name, reviewer_rating, comment },
+}) => {
   return (
     <li className={css.item}>
       <div className={css["top-flex"]}>
@@ -13,6 +17,7 @@ const ReviewItem = ({ reviewData: { reviewer_name, reviewer_rating } }) => {
           <RatingStars rating={reviewer_rating} />
         </div>
       </div>
+      <Text variant="light">{comment}</Text>
     </li>
   );
 };
