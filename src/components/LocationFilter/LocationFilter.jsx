@@ -32,7 +32,7 @@ const LocationFilter = () => {
           }}
         />
         <svg className={css["map-icon"]}>
-          <use href="/public/sprite.svg#icon-map"></use>
+          <use href="/sprite.svg#icon-map"></use>
         </svg>
       </div>
     </div>
