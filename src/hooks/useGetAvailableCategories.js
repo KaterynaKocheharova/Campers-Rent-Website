@@ -26,7 +26,6 @@ export const useGetAvailableCategories = (vehicleData) => {
     .filter((category) => category.available)
     .map((category) => category.name);
 
-    console.log(availableCategories)
 
   return availableCategories;
 };

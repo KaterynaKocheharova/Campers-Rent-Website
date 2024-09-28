@@ -47,3 +47,9 @@
   background-color: transparent;
   border: 1px solid var(--red-dark);
 }
+
+.form-button {
+  width: 163px;
+  padding-left: 63px;
+  padding-right: 63px;
+}

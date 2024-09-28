@@ -9,6 +9,7 @@ import VehicleCardHead from "../../components/VehicleCardHead/VehicleCardHead";
 import VehicleImageGrid from "../../components/VehicleImageGrid/VehicleImageGrid";
 import Text from "../../components/common/Text/Text";
 import VehicleDetailsTabs from "../../components/VehicleDetailsTabs/VehicleDetailsTabs";
+import BookingForm from "../../components/BookingForm/BookingForm";
 import css from "./DetailsPage.module.css";
 
 const DetailsPage = () => {
@@ -49,6 +50,7 @@ const DetailsPage = () => {
         <VehicleDetailsTabs />
         <div className={css.bottom}>
           <Outlet />
+          <BookingForm />
         </div>
       </Container>
     </Section>

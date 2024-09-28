@@ -4,5 +4,13 @@
 
 .bottom {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1000px) {
+  .bottom {
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+  }
 }

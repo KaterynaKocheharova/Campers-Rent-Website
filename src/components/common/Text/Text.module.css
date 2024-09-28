@@ -22,3 +22,7 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+.mb24 {
+  margin-bottom: 24px;
+}
