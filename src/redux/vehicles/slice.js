@@ -40,8 +40,12 @@ const vehiclesSlice = createSlice({
     changeCurrentPage: (state, action) => {
       state.currentPage = action.payload;
     },
+    cleanVehicles: (state) => {
+      state.currentPage = 1;
+      state.items = [];
+    }
   },
 });
 
-export const { changeCurrentPage } = vehiclesSlice.actions;
+export const { changeCurrentPage, cleanVehicles } = vehiclesSlice.actions;
 export const vehiclesReducer = vehiclesSlice.reducer;

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeCurrentPage } from "../../redux/vehicles/slice";
 import { fetchVehicles } from "../../redux/vehicles/operations";
+import {cleanVehicles} from "../../redux/vehicles/slice";
 import {
   selectLocationFilter,
   selectVehicleEquipmentFilter,
@@ -21,7 +21,7 @@ const FiltersSidebar = () => {
   const transmission = useSelector(selectVehicleTransmissionFilter);
 
   const handleSearchByFilter = () => {
-    dispatch(changeCurrentPage(1));
+    dispatch(cleanVehicles());
     dispatch(
       fetchVehicles({
         page: 1,
