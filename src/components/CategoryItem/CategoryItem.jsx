@@ -15,7 +15,7 @@ const CategoryItem = ({ icon, text }) => {
       {text === "Microwave" && <MdOutlineMicrowave className={css.icon} />}
       {text === "Gas" && <MdGasMeter className={css.icon} />}
       {text === "Refrigerator" && <RiFridgeLine className={css.icon} />}
-      <ThickText>{text}</ThickText>
+      <ThickText extraClass="capitalized">{text}</ThickText>
     </div>
   );
 };
