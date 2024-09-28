@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getVehicleById } from "../non-redux-api/getVehicleById";
 
-export const useFetchVehicleDeatils = () => {
+export const useFetchVehicleDetails = () => {
   const { id } = useParams();
   const [vehicleData, setVehicleData] = useState(null);
   const [error, setError] = useState(null);

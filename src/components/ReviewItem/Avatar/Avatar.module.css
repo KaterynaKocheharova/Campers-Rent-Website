@@ -1,0 +1,14 @@
+.avatar {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  flex-shrink: 0;
+  background-color: var(--badge-color);
+  color: var(--red-light);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33;
+}

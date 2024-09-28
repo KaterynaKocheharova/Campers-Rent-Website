@@ -1,4 +1,4 @@
-import { useFetchVehicleDeatils } from "../../hooks/useFetchVehicleDetails";
+import { useFetchVehicleDetails } from "../../hooks/useFetchVehicleDetails";
 import { useGetAvailableCategories } from "../../hooks/useGetAvailableCategories";
 import CategoriesList from "../CategoriesList/CategoriesList";
 import DetailsTable from "./DetailsTable/DetailsTable";
@@ -6,7 +6,7 @@ import H3Title from "../common/H3Title/H3Title";
 import css from "./VehicleFeatures.module.css";
 
 const VehicleFeatures = () => {
-  const { vehicleData } = useFetchVehicleDeatils();
+  const { vehicleData } = useFetchVehicleDetails();
   const { engine, transmission } = vehicleData || {};
 
   const availableCategories = useGetAvailableCategories(vehicleData);

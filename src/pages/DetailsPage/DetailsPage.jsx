@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useFetchVehicleDeatils } from "../../hooks/useFetchVehicleDetails";
+import { useFetchVehicleDetails } from "../../hooks/useFetchVehicleDetails";
 import { Outlet } from "react-router-dom";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
@@ -12,7 +12,7 @@ import VehicleDetailsTabs from "../../components/VehicleDetailsTabs/VehicleDetai
 import css from "./DetailsPage.module.css";
 
 const DetailsPage = () => {
-  const { vehicleData, error, loading } = useFetchVehicleDeatils();
+  const { vehicleData, error, loading } = useFetchVehicleDetails();
 
   const {
     name,
