@@ -12,6 +12,7 @@ const CategoryItem = ({ icon, text }) => {
           <use href={`/sprite.svg#${icon}`}></use>
         </svg>
       )}
+      {/* some icons are not present on the mockup, so I had to add ones from React Icons lib */}
       {text === "Microwave" && <MdOutlineMicrowave className={css.icon} />}
       {text === "Gas" && <MdGasMeter className={css.icon} />}
       {text === "Refrigerator" && <RiFridgeLine className={css.icon} />}
