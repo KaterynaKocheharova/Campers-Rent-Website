@@ -1,20 +1,20 @@
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { activateSuccessToast } from "../../utils/toast";
 import DatePicker from "react-datepicker";
 import H3Title from "../common/H3Title/H3Title";
 import Text from "../common/Text/Text";
 import Button from "../common/Button/Button";
-import { activateSuccessToast } from "../../utils/toast";
 import "react-datepicker/dist/react-datepicker.css";
+import "./Datepicker.css";
 import clsx from "clsx";
 import css from "./BookingForm.module.css";
-import "./Datepicker.css";
 
 const BookingForm = () => {
   const initialValues = {
     name: "",
     email: "",
-    bookingData: "",
+    bookingDate: "",
     comment: "",
   };
 
@@ -23,7 +23,7 @@ const BookingForm = () => {
     email: Yup.string()
       .email("Invalid email format")
       .required("Email is required"),
-    bookingData: Yup.date().required("Booking date is required"),
+    bookingDate: Yup.date().required("Booking date is required"),
     comment: Yup.string(),
   });
 
@@ -69,14 +69,14 @@ const BookingForm = () => {
             <div className={css["relative"]}>
               <DatePicker
                 className={css.input}
-                selected={values.bookingData}
-                onChange={(date) => setFieldValue("bookingData", date)}
+                selected={values.bookingDate}
+                onChange={(date) => setFieldValue("bookingDate", date)}
                 dateFormat="yyyy/MM/dd"
                 placeholderText="Booking date*"
               />
               <ErrorMessage
                 className={css.error}
-                name="bookingData"
+                name="bookingDate"
                 render={(msg) => <div className={css.error}>{msg}</div>}
               />
             </div>
