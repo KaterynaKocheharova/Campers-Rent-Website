@@ -1,5 +1,4 @@
 export const getFilterButtonName = (name) => {
-
   switch (name) {
     case "fullyIntegrated":
       return "Fully Intergated";
