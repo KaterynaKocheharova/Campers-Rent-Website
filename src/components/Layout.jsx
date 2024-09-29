@@ -7,7 +7,6 @@ const Layout = ({ children }) => {
     <div>
       <AppBar />
       <Suspense fallback={<Loader />}>{children}</Suspense>
-      {/* <Loader/> */}
     </div>
   );
 };
