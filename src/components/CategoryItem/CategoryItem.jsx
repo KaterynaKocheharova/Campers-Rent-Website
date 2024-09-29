@@ -1,6 +1,6 @@
 import { MdGasMeter, MdOutlineMicrowave } from "react-icons/md";
 import { RiFridgeLine } from "react-icons/ri";
-import ThickText from "../common/ThickText/TickText";
+import ThickText from "../common/ThickText/ThickText";
 
 import css from "./CategoryItem.module.css";
 

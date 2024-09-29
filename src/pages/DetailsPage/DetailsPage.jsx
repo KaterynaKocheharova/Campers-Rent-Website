@@ -37,7 +37,7 @@ const DetailsPage = () => {
             <VehicleCardHead
               headData={{ name, rating, location, price, reviews }}
               variant="details"
-              isUnderlined
+
             />
           )}
           {vehicleData && <VehicleImageGrid images={images} />}

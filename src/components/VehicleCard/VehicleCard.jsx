@@ -60,7 +60,7 @@ const VehicleCard = ({ vehicleData }) => {
             variant="card"
           />
           <div className={css["card-body"]}>
-            <Text variant="light" addEllipsis={true}>
+            <Text variant="light" extraClass="ellipsis">
               {description}
             </Text>
             <CategoriesList

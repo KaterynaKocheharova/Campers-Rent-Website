@@ -1,5 +1,5 @@
 import Avatar from "./Avatar/Avatar";
-import ThickText from "../common/ThickText/TickText";
+import ThickText from "../common/ThickText/ThickText";
 import RatingStars from "./RatingStars/RatingStars";
 import Text from "../common/Text/Text";
 

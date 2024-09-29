@@ -1,4 +1,4 @@
-import ThickText from "../../../common/ThickText/TickText";
+import ThickText from "../../../common/ThickText/ThickText";
 import css from "./VehicleDetail.module.css";
 
 const VehicleDetail = ({ detail: { property, value } }) => {

@@ -7,7 +7,6 @@ import css from "./VehicleCardHead.module.css";
 const VehicleCardHead = ({
   headData: { name, rating, location, price, reviews, id },
   variant,
-  isUnderlined,
 }) => {
   return (
     <div
@@ -22,7 +21,7 @@ const VehicleCardHead = ({
           <Rating
             rating={rating}
             reviews={reviews}
-            isUnderlined={isUnderlined}
+            variant={variant}
           />
           <Location location={location} />
         </div>
