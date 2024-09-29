@@ -9,6 +9,9 @@ const CategoriesList = ({
   engine,
   transmission,
 }) => {
+  // the design for the card requires only 4 category items, and they should be only engine transmission, kitchen and AC,
+  // but in the details page I'm supposed to have all items, so
+  // below I was trying to implement this
   if (variant === "details") {
     return (
       <ul className={clsx(css.list, css.mb100)}>
