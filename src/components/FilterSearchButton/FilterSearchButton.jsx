@@ -9,7 +9,7 @@ import {
 } from "../../redux/filters/selectors";
 import Button from "../common/Button/Button";
 
-const SearchByFilterButton = () => {
+const FilterSearchButton = () => {
   const dispatch = useDispatch();
   const location = useSelector(selectLocationFilter);
   const vehicleEquipment = useSelector(selectVehicleEquipmentFilter);
@@ -41,4 +41,4 @@ const SearchByFilterButton = () => {
   );
 };
 
-export default SearchByFilterButton;
+export default FilterSearchButton;
