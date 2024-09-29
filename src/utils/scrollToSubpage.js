@@ -1,5 +1,6 @@
+// it's used when you click on the features or reviews tab on the details page
+
 export const scrollToSubpage = (component) => {
-  console.log(component);
   const { top } = component.getBoundingClientRect();
   window.scrollBy({
     top,
