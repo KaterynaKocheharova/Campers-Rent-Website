@@ -1,5 +1,11 @@
 .grid {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 24px;
+}
+
+@media screen and (min-width: 1440px) {
+  .grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
 }

@@ -6,7 +6,12 @@
 }
 
 .features-content {
-  width: 527px;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  .features-content {
+    width: 527px;
+  }
 }

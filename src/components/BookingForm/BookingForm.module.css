@@ -1,10 +1,15 @@
 .form-container {
-  width: 641px;
   min-height: 588px;
   padding: 44px;
   border-radius: 10px;
   border: var(--main-border);
   margin-left: auto;
+}
+
+@media screen and (min-width: 1440px) {
+  .form-container {
+    width: 641px;
+  }
 }
 
 .inputs {
@@ -45,6 +50,6 @@
 }
 
 .center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

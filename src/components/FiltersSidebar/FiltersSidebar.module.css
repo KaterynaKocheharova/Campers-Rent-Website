@@ -1,5 +1,7 @@
-.filters-sidebar {
-  width: 360px;
+@media screen and (min-width: 1440px) {
+  .filters-sidebar {
+    width: 360px;
+  }
 }
 
 .filters-title {
