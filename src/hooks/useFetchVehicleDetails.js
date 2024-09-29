@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getVehicleById } from "../non-redux-api/getVehicleById";
 
+  // I created the hook for fethcing vehicle details because it wasn't required by technical task
+  // to store it in redux
+  // this hook is reused in reviews and features subpages on vehicle detail page
+
 export const useFetchVehicleDetails = () => {
   const { id } = useParams();
   const [vehicleData, setVehicleData] = useState(null);
@@ -27,4 +31,3 @@ export const useFetchVehicleDetails = () => {
 
   return { vehicleData, error, loading };
 };
-

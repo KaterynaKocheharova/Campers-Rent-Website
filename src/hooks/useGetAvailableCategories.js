@@ -1,5 +1,7 @@
 export const useGetAvailableCategories = (vehicleData) => {
 
+  // I created this hook to reuse in VehicleCard and VehicleFeatures components
+
   const {
     AC,
     bathroom,
