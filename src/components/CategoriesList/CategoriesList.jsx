@@ -8,11 +8,10 @@ const CategoriesList = ({
   availableCategories,
   engine,
   transmission,
-  extraClass,
 }) => {
   if (variant === "details") {
     return (
-      <ul className={clsx(css.list, css[extraClass])}>
+      <ul className={clsx(css.list, css.mb100)}>
         {availableCategories.map((category, index) => {
           const icon = getIconByCategoryName(category);
           return <CategoryItem key={index} icon={icon} text={category} />;
@@ -23,13 +22,7 @@ const CategoriesList = ({
     );
   } else if (variant === "card") {
     return (
-      <ul
-        className={clsx(
-          css.list,
-          css[extraClass],
-          variant === "card" && css.card
-        )}
-      >
+      <ul className={clsx(css.list, css.card)}>
         <CategoryItem text={transmission} icon="icon-diagram" />
         <CategoryItem text={engine} icon="icon-fuel-pump" />
         {availableCategories.map((category, index) => {
