@@ -10,11 +10,3 @@
 .input::placeholder {
   color: var(--dark-gray);
 }
-
-.location-filter-input {
-  padding-left: 48px;
-}
-
-.location-filter-input:focus + svg {
-  fill: var(--main-font-color);
-}
