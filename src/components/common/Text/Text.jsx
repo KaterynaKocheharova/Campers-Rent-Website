@@ -4,8 +4,6 @@ import css from "./Text.module.css";
 const Text = ({
   children,
   variant,
-  // addEllipsis = false,
-  // isUnderlined = false,
   extraClass,
 }) => {
   return (
@@ -14,8 +12,6 @@ const Text = ({
         css.text,
         variant === "dark" && css.dark,
         variant === "light" && css.light,
-        // addEllipsis && css.ellipses,
-        // isUnderlined && css.underlined,
         extraClass && css[extraClass]
       )}
     >
