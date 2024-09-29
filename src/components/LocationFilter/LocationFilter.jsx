@@ -7,7 +7,6 @@ import css from "./LocationFilter.module.css";
 const LocationFilter = () => {
   const filterInputId = useId();
 
-  
   const location = useSelector(selectLocationFilter);
   const dispatch = useDispatch();
 

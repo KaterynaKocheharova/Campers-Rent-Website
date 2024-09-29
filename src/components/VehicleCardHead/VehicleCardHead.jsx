@@ -1,6 +1,7 @@
 import Rating from "./Rating/Rating";
 import Location from "./Location/Location";
-import PriceAndLikeGroup from "./PriceAndLikeGroup/PriceAndLikeGroup";
+import Price from "./Price/Price";
+import AddToFavoritesButton from "./AddToFavoritesButton/AddToFavoritesButton";
 import clsx from "clsx";
 import css from "./VehicleCardHead.module.css";
 
@@ -18,15 +19,14 @@ const VehicleCardHead = ({
       <div>
         <h2 className={css["title"]}>{name}</h2>
         <div className={css["rating-location-flex"]}>
-          <Rating
-            rating={rating}
-            reviews={reviews}
-            variant={variant}
-          />
+          <Rating rating={rating} reviews={reviews} variant={variant} />
           <Location location={location} />
         </div>
       </div>
-      <PriceAndLikeGroup price={price} variant={variant} id={id} />
+      <div className={css["flex"]}>
+        <Price price={price} />
+        {variant == "card" && <AddToFavoritesButton id={id} />}
+      </div>
     </div>
   );
 };

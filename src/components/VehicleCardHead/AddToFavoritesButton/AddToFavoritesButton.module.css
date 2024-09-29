@@ -1,0 +1,9 @@
+.icon {
+  cursor: pointer;
+  width: 26px;
+  height: 24px;
+}
+
+.favorite {
+  fill: var(--red-light);
+}
