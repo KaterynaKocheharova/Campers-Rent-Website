@@ -37,14 +37,11 @@ const DetailsPage = () => {
             <VehicleCardHead
               headData={{ name, rating, location, price, reviews }}
               variant="details"
-
             />
           )}
           {vehicleData && <VehicleImageGrid images={images} />}
-
           <Text variant="light">{description}</Text>
         </div>
-
         {error && <Error />}
         {loading && <Loader />}
         <VehicleDetailsTabs />

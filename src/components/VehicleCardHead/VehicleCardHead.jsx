@@ -5,6 +5,8 @@ import AddToFavoritesButton from "./AddToFavoritesButton/AddToFavoritesButton";
 import clsx from "clsx";
 import css from "./VehicleCardHead.module.css";
 
+// it's a separate component because DetailsPage and VehicleCard pages both have it with little differences
+
 const VehicleCardHead = ({
   headData: { name, rating, location, price, reviews, id },
   variant,
