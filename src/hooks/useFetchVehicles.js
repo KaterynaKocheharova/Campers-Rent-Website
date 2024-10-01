@@ -19,7 +19,7 @@ export const useFetchVehicles = (page) => {
   const dispatch = useDispatch();
 
   const fetch = () => {
-    dispatch(
+    return dispatch(
       fetchVehicles({
         page: page ? page : currentPage,
         limit: 4,

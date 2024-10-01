@@ -1,45 +1,25 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectCurrentPage } from "../../redux/vehicles/selectors";
-import {
-  selectVehicleEquipmentFilter,
-  selectVehicleTransmissionFilter,
-  selectVehicleTypeFilter,
-  selectLocationFilter,
-} from "../../redux/filters/selectors";
-import { fetchVehicles } from "../../redux/vehicles/operations";
 import { changeCurrentPage } from "../../redux/vehicles/slice";
+import { useFetchVehicles } from "../../hooks/useFetchVehicles";
 import Button from "../common/Button/Button";
 
 const LoadMoreButton = () => {
   const currentPage = useSelector(selectCurrentPage);
-  const location = useSelector(selectLocationFilter);
-  const vehicleEquipment = useSelector(selectVehicleEquipmentFilter);
-  const vehicleType = useSelector(selectVehicleTypeFilter);
-  const transmission = useSelector(selectVehicleTransmissionFilter);
+  const { fetch } = useFetchVehicles(currentPage + 1);
 
   const dispatch = useDispatch();
 
+  const handleGalleryScrollDown = () => {
+    window.scrollBy({
+      top: 500,
+      behavior: "smooth",
+    });
+  };
+
   const handleLoadMoreClick = () => {
     dispatch(changeCurrentPage(currentPage + 1));
-    dispatch(
-      fetchVehicles({
-        page: currentPage + 1,
-        limit: 4,
-        filters: {
-          location,
-          vehicleEquipment,
-          vehicleType,
-          transmission,
-        },
-      })
-    )
-      .unwrap()
-      .then(() => {
-        window.scrollBy({
-          top: 500,
-          behavior: "smooth",
-        });
-      });
+    fetch().then(handleGalleryScrollDown);
   };
 
   return (
