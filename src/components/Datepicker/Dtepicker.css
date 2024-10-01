@@ -1,3 +1,11 @@
+.react-datepicker {
+  max-width: 276px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  border-radius: 12px;
+  border: 1px solid var(--secondary-font-color);
+}
+
 .react-datepicker-wrapper {
   width: 100%;
 }
