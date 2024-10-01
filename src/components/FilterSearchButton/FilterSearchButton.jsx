@@ -1,37 +1,18 @@
-import { useDispatch, useSelector } from "react-redux";
-import { fetchVehicles } from "../../redux/vehicles/operations";
+import { useDispatch } from "react-redux";
 import { cleanVehicles } from "../../redux/vehicles/slice";
-import {
-  selectLocationFilter,
-  selectVehicleEquipmentFilter,
-  selectVehicleTransmissionFilter,
-  selectVehicleTypeFilter,
-} from "../../redux/filters/selectors";
+import { useFetchVehicles } from "../../hooks/useFetchVehicles";
 import Button from "../common/Button/Button";
 
 const FilterSearchButton = () => {
   const dispatch = useDispatch();
-  const location = useSelector(selectLocationFilter);
-  const vehicleEquipment = useSelector(selectVehicleEquipmentFilter);
-  const vehicleType = useSelector(selectVehicleTypeFilter);
-  const transmission = useSelector(selectVehicleTransmissionFilter);
+
+  const { fetch } = useFetchVehicles();
 
   const handleSearchByFilter = () => {
     dispatch(cleanVehicles());
-    dispatch(
-      fetchVehicles({
-        page: 1,
-        limit: 4,
-        filters: {
-          location,
-          vehicleEquipment,
-          vehicleType,
-          transmission,
-        },
-      })
-    );
+    fetch();
   };
-  
+
   return (
     <div>
       <Button handleClick={handleSearchByFilter} extraClass="search-button">
