@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import VehicleImage from "../VehicleImage/VehicleImage";
 import VehicleCardHead from "../VehicleCardHead/VehicleCardHead";
 import Text from "../common/Text/Text";
@@ -9,6 +10,7 @@ import css from "./VehicleCard.module.css";
 
 const VehicleCard = ({ vehicleData }) => {
   const availableCategories = useGetAvailableCategories(vehicleData);
+  const currentLocation = useLocation();
 
   const {
     name,
@@ -49,7 +51,7 @@ const VehicleCard = ({ vehicleData }) => {
               transmission={transmission}
               engine={engine}
             />
-            <Button extraClass="show-more-link" vehicleId={id}>
+            <Button extraClass="show-more-link" vehicleId={id} currentLocation={currentLocation}>
               Show more
             </Button>
           </div>

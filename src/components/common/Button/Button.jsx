@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 import clsx from "clsx";
 import css from "./Button.module.css";
 
-const Button = ({ children, extraClass, vehicleId, handleClick }) => {
+const Button = ({
+  children,
+  extraClass,
+  vehicleId,
+  handleClick,
+  currentLocation,
+}) => {
   if (extraClass === "hero-link") {
     return (
       <Link className={clsx(css.button, css["hero-link"])} to="/catalog">
@@ -16,6 +22,7 @@ const Button = ({ children, extraClass, vehicleId, handleClick }) => {
       <Link
         className={clsx(css.button, css["show-more-link"])}
         to={`/catalog/${vehicleId}`}
+        state={currentLocation}
       >
         {children}
       </Link>

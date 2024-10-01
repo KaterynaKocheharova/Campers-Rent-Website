@@ -1,6 +1,6 @@
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import { useFetchVehicleDetails } from "../../hooks/useFetchVehicleDetails";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
 import Error from "../../components/common/Error/Error";
@@ -10,10 +10,14 @@ import VehicleImageGrid from "../../components/VehicleImageGrid/VehicleImageGrid
 import Text from "../../components/common/Text/Text";
 import VehicleDetailsTabs from "../../components/VehicleDetailsTabs/VehicleDetailsTabs";
 import BookingForm from "../../components/BookingForm/BookingForm";
+import GoBackButton from "../../components/GoBackButton/GoBackButton";
 import css from "./DetailsPage.module.css";
 
 const DetailsPage = () => {
   const { vehicleData, error, loading } = useFetchVehicleDetails();
+  const currentLocation = useLocation();
+  const backLinkHref = useRef(currentLocation.state ?? "/catalog");
+  console.log(backLinkHref.current);
 
   const {
     name,
@@ -33,12 +37,16 @@ const DetailsPage = () => {
     <Section>
       <Container>
         <div className={css.top}>
-          {name && rating && location && price && reviews && (
-            <VehicleCardHead
-              headData={{ name, rating, location, price, reviews }}
-              variant="details"
-            />
-          )}
+          <div className={css["top-flex"]}>
+            {name && rating && location && price && reviews && (
+              <VehicleCardHead
+                headData={{ name, rating, location, price, reviews }}
+                variant="details"
+              />
+            )}
+            <GoBackButton to={backLinkHref.current} />
+          </div>
+
           {vehicleData && <VehicleImageGrid images={images} />}
           <Text variant="light">{description}</Text>
         </div>
