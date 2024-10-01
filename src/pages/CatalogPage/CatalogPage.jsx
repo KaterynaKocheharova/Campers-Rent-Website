@@ -7,6 +7,7 @@ import {
   selectIsLoadingVehicles,
   selectError,
 } from "../../redux/vehicles/selectors";
+import { changeCurrentPage } from "../../redux/vehicles/slice";
 import { fetchVehicles } from "../../redux/vehicles/operations";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
@@ -33,10 +34,9 @@ const CatalogPage = () => {
   );
 
   useEffect(() => {
-    if (currentPage === 1) {
-      dispatch(fetchVehicles({ page: currentPage, limit }));
-    }
-  }, [dispatch, currentPage]);
+    dispatch(changeCurrentPage(1));
+    dispatch(fetchVehicles({ page: 1, limit }));
+  }, [dispatch]);
 
   return (
     <Section>
