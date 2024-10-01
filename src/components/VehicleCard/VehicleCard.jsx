@@ -26,7 +26,7 @@ const VehicleCard = ({ vehicleData }) => {
   } = vehicleData;
 
   return (
-    <div className={css.card}>
+    <li className={css.card}>
       <div className={css["card-layout"]}>
         <VehicleImage url={gallery[0].thumb} />
         <div className={css["card-right"]}>
@@ -57,7 +57,7 @@ const VehicleCard = ({ vehicleData }) => {
           </div>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

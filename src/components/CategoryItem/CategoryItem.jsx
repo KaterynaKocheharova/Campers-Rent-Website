@@ -6,7 +6,7 @@ import css from "./CategoryItem.module.css";
 
 const CategoryItem = ({ icon, text }) => {
   return (
-    <div className={css.item}>
+    <li className={css.item}>
       {icon && (
         <svg className={css.icon}>
           <use href={`/sprite.svg#${icon}`}></use>
@@ -17,7 +17,7 @@ const CategoryItem = ({ icon, text }) => {
       {text === "Gas" && <MdGasMeter className={css.icon} />}
       {text === "Refrigerator" && <RiFridgeLine className={css.icon} />}
       <ThickText extraClass="capitalized">{text}</ThickText>
-    </div>
+    </li>
   );
 };
 
