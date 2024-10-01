@@ -84,6 +84,7 @@
 }
 
 .react-datepicker__month {
+  padding: 12px;
   margin: unset;
   text-align: unset;
 }
