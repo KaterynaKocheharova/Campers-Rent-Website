@@ -30,3 +30,22 @@
   height: 25px;
   cursor: pointer;
 }
+
+.react-datepicker__header {
+  background-color: var(--main-bg-color);
+  border-bottom: 1px solid var(--secondary-font-color);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 8px 0;
+  position: relative;
+}
+
+.react-datepicker__header:not(.react-datepicker__header--has-time-select) {
+  border-top-right-radius: 12px;
+}
+
+.react-datepicker__current-month {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
