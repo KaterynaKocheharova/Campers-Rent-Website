@@ -1,12 +1,10 @@
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { activateSuccessToast } from "../../utils/toast";
-import DatePicker from "react-datepicker";
 import H3Title from "../common/H3Title/H3Title";
 import Text from "../common/Text/Text";
 import Button from "../common/Button/Button";
-import "react-datepicker/dist/react-datepicker.css";
-import "./Datepicker.css";
+import Datepicker from "../Datepicker/Datepicker";
 import clsx from "clsx";
 import css from "./BookingForm.module.css";
 
@@ -67,12 +65,9 @@ const BookingForm = () => {
               />
             </div>
             <div className={css["relative"]}>
-              <DatePicker
-                className={css.input}
+              <Datepicker
                 selected={values.bookingDate}
                 onChange={(date) => setFieldValue("bookingDate", date)}
-                dateFormat="yyyy/MM/dd"
-                placeholderText="Booking date*"
               />
               <ErrorMessage
                 className={css.error}
