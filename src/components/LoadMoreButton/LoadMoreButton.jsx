@@ -33,7 +33,7 @@ const LoadMoreButton = () => {
 
   return (
     <>
-      {currentPage < totalPages && !vehicles.length && (
+      {currentPage < totalPages && vehicles.length > 0 && (
         <Button handleClick={handleLoadMoreClick} extraClass="load-more-button">
           Load more
         </Button>
