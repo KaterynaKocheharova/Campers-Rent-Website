@@ -3,6 +3,7 @@ import { changeFilter } from "../../redux/filters/slice";
 import { fetchVehicles } from "../../redux/vehicles/operations";
 import { cleanVehicles } from "../../redux/vehicles/slice";
 import { Formik, Form } from "formik";
+import { activateErrorToast } from "../../utils/toast";
 import LocationFilter from "../LocationFilter/LocationFilter";
 import EquipmentFilter from "../EquipmentFilter/EquipmentFilter";
 import VehicleTypeFilter from "../VehicleTypeFilter/VehicleTypeFilter";
@@ -19,17 +20,15 @@ const FiltrationForm = () => {
     vehicleType: "",
   };
 
-  // const validationSchema = Yup.object().shape({
-  //   location: Yup.string(),
-  //   checkedEquipment: Yup.array()
-  //     .min(1, "Choose equipment. You can choose a few"),
-  //   vehicleType: Yup.string(),
-  // });
-
   const dispatch = useDispatch();
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (values) => {
     const { location, checkedEquipment, vehicleType } = values;
+
+    if (!location && !checkedEquipment.length && !vehicleType) {
+      activateErrorToast("At least one filter should be chosen");
+      return;
+    }
 
     const newVehicleEquipment = checkedEquipment.filter(
       (equipment) => equipment !== "Automatic"
@@ -56,7 +55,6 @@ const FiltrationForm = () => {
   return (
     <Formik
       initialValues={initialValues}
-      // validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
       <Form className={css["filtration-form"]}>
