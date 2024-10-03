@@ -12,7 +12,6 @@ export const useFetchVehicles = (page, reset = false) => {
     return dispatch(
       fetchVehicles({
         page,
-        limit: 4,
         filters,
         reset,
       })

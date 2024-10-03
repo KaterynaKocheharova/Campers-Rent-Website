@@ -16,12 +16,10 @@ import css from "./CatalogPage.module.css";
 const CatalogPage = () => {
   const isLoading = useSelector(selectIsLoadingVehicles);
   const vehicles = useSelector(selectVehicles);
-  const limit = 4;
-
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchVehicles({ page: 1, limit, reset: true }));
+    dispatch(fetchVehicles({ page: 1, reset: true }));
   }, [dispatch]);
 
   return (

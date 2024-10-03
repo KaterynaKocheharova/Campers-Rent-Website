@@ -31,7 +31,6 @@ const LoadMoreButton = () => {
     dispatch(
       fetchVehicles({
         page: currentPage + 1,
-        limit: 4,
         filters,
         reset: false,
       })

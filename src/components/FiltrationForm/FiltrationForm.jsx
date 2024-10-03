@@ -45,7 +45,7 @@ const FiltrationForm = () => {
 
     const reset = true;
 
-    dispatch(fetchVehicles({ page: 1, limit: 4, filters: newFilters, reset }))
+    dispatch(fetchVehicles({ page: 1, filters: newFilters, reset }))
       .unwrap()
       .catch(() => {
         dispatch(cleanVehicles());
