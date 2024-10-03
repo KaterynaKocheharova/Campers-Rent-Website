@@ -3,7 +3,7 @@ import { fetchVehicles } from "../redux/vehicles/operations";
 import { cleanVehicles } from "../redux/vehicles/slice";
 import { selectFilters } from "../redux/filters/selectors";
 
-export const useFetchVehicles = (page) => {
+export const useFetchVehicles = (page, reset = false) => {
   const filters = useSelector(selectFilters);
 
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ export const useFetchVehicles = (page) => {
         page,
         limit: 4,
         filters,
+        reset,
       })
     )
       .unwrap()

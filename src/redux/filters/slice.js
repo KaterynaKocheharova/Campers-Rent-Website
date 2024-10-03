@@ -12,10 +12,11 @@ const filtersSlice = createSlice({
   initialState: filterInitialState,
   reducers: {
     changeFilter(state, action) {
-      const { vehicleType, location, equipment, transmission } = action.payload;
+      const { vehicleType, location, vehicleEquipment, transmission } =
+        action.payload;
       state.location = location;
       state.vehicleType = vehicleType;
-      state.vehicleEquipment = equipment;
+      state.vehicleEquipment = vehicleEquipment;
       state.transmission = transmission;
     },
   },

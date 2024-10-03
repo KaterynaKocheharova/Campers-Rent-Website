@@ -1,4 +1,7 @@
-import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { changeFilter } from "../../redux/filters/slice";
+import { fetchVehicles } from "../../redux/vehicles/operations";
+import { cleanVehicles } from "../../redux/vehicles/slice";
 import { Formik, Form } from "formik";
 import LocationFilter from "../LocationFilter/LocationFilter";
 import EquipmentFilter from "../EquipmentFilter/EquipmentFilter";
@@ -7,30 +10,53 @@ import Button from "../common/Button/Button";
 
 import css from "./FiltrationForm.module.css";
 
-const BookingForm = () => {
+const FiltrationForm = () => {
+  const reset = true;
+
   const initialValues = {
     location: "",
     checkedEquipment: [],
     vehicleType: "",
   };
 
-  const validationSchema = Yup.object().shape({
-    location: Yup.string().required("Write a city"),
-    checkedEquipment: Yup.array()
-      .min(1, "Choose equipment. You can choose a few")
-      .required("Choose equipment. You can choose a few"),
-    vehicleType: Yup.string().required("Choose one vehicle type"),
-  });
+  // const validationSchema = Yup.object().shape({
+  //   location: Yup.string(),
+  //   checkedEquipment: Yup.array()
+  //     .min(1, "Choose equipment. You can choose a few"),
+  //   vehicleType: Yup.string(),
+  // });
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    resetForm();
+    const { location, checkedEquipment, vehicleType } = values;
+
+    const newVehicleEquipment = checkedEquipment.filter(
+      (equipment) => equipment !== "Automatic"
+    );
+
+    const newFilters = {
+      vehicleType,
+      vehicleEquipment: newVehicleEquipment,
+      location,
+      transmission: checkedEquipment.includes("Automatic") ? "Automatic" : "",
+    };
+
+    dispatch(changeFilter(newFilters));
+
+    const reset = true;
+
+    dispatch(fetchVehicles({ page: 1, limit: 4, filters: newFilters, reset }))
+      .unwrap()
+      .catch(() => {
+        dispatch(cleanVehicles());
+      });
   };
 
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      // validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
       <Form className={css["filtration-form"]}>
@@ -46,4 +72,4 @@ const BookingForm = () => {
   );
 };
 
-export default BookingForm;
+export default FiltrationForm;
