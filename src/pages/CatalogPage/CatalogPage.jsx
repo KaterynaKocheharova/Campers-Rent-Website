@@ -11,7 +11,6 @@ import { changeCurrentPage } from "../../redux/vehicles/slice";
 import { fetchVehicles } from "../../redux/vehicles/operations";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
-import FiltersSidebar from "../../components/FiltersSidebar/FiltersSidebar";
 import VehiclesList from "../../components/VehiclesList/VehiclesList";
 import LoadMoreButton from "../../components/LoadMoreButton/LoadMoreButton";
 import Error from "../../components/common/Error/Error";
@@ -44,7 +43,6 @@ const CatalogPage = () => {
         {error && <Error />}
         {isLoading && <Loader />}
         <div className={css["page-layout"]}>
-          <FiltersSidebar />
           <div className={css.catalog}>
             <VehiclesList vehicles={vehicles} />
             {vehicles.length > 0 && currentPage < totalPages && (
