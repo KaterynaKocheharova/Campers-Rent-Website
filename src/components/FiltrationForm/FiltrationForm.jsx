@@ -2,6 +2,7 @@ import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import LocationFilter from "../LocationFilter/LocationFilter";
 import EquipmentFilter from "../EquipmentFilter/EquipmentFilter";
+import VehicleTypeFilter from "../VehicleTypeFilter/VehicleTypeFilter";
 import css from "./FiltrationForm.module.css";
 
 const BookingForm = () => {
@@ -16,7 +17,7 @@ const BookingForm = () => {
     checkedEquipment: Yup.array()
       .min(1, "Choose equipment. You can choose a few")
       .required("Choose equipment. You can choose a few"),
-    // vehicleType: Yup.string().required("Choose one vehicle type"),
+    vehicleType: Yup.string().required("Choose one vehicle type"),
   });
 
   const handleSubmit = (values, { resetForm }) => {
@@ -34,6 +35,7 @@ const BookingForm = () => {
         <LocationFilter />
         <h2 className={css["filters-title"]}>Filters</h2>
         <EquipmentFilter />
+        <VehicleTypeFilter />
         <button type="submit">Search</button>
       </Form>
     </Formik>

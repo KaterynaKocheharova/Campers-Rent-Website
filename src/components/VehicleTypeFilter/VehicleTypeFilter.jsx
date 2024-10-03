@@ -1,8 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { selectVehicleTypeFilter } from "../../redux/filters/selectors";
-import { changeVehicleTypeFilter } from "../../redux/filters/slice";
 import FilterButtonsGrid from "../FilterButtonsGrid/FilterButtonsGrid";
-import FilterButton from "../FilterButton/FilterButton";
+import FilterVehicleTypeRadio from "../FilterVehicleTypeRadio/FilterVehicleTypeRadio";
 import FilterTitle from "../FilterTitle/FilterTitle";
 
 const vehicleTypeFilters = [
@@ -21,26 +18,12 @@ const vehicleTypeFilters = [
 ];
 
 const VehicleTypeFilter = () => {
-  const vehicleType = useSelector(selectVehicleTypeFilter);
-  const dispatch = useDispatch();
-
-  const handleChangeVehicleTypeFilter = (newType) => {
-    dispatch(changeVehicleTypeFilter(newType));
-  };
-
   return (
     <>
       <FilterTitle>Vehicle type</FilterTitle>
-      <FilterButtonsGrid>
+      <FilterButtonsGrid name="vehicleType">
         {vehicleTypeFilters.map((equipmentFilter, index) => (
-          <FilterButton
-            isSelected={vehicleType === equipmentFilter.name}
-            changeFilterHandler={() =>
-              handleChangeVehicleTypeFilter(equipmentFilter.name)
-            }
-            key={index}
-            filterData={equipmentFilter}
-          />
+          <FilterVehicleTypeRadio key={index} filterData={equipmentFilter} />
         ))}
       </FilterButtonsGrid>
     </>

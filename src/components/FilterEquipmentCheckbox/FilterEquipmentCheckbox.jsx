@@ -2,6 +2,8 @@ import { useId } from "react";
 import { useField, Field } from "formik";
 import { getFilterButtonName } from "../FilterButton/getFilterButtonName";
 import StyledFilterButton from "../StyledFilterButton/StyledFilterButton";
+import StyledFilterButtonText from "../StyledFilterButtonText/StyledFilterButtonText";
+import StyledFilterButtonIcon from "../StyledFilterButtonIcon/StyledFilterButtonIcon";
 import css from "./FilterEquipmentCheckbox.module.css";
 
 const FilterEquipmentCheckbox = ({ filterData: { icon, name } }) => {
@@ -24,10 +26,8 @@ const FilterEquipmentCheckbox = ({ filterData: { icon, name } }) => {
         value={name}
         checked={field.value.includes(name)}
       />
-      <svg className={css.icon}>
-        <use href={`/sprite.svg#${icon}`}></use>
-      </svg>
-      <p className={css.text}>{filterName}</p>
+      <StyledFilterButtonIcon path={`/sprite.svg#${icon}`} />
+      <StyledFilterButtonText>{filterName}</StyledFilterButtonText>
     </StyledFilterButton>
   );
 };
