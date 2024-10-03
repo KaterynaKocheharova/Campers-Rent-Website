@@ -1,6 +1,6 @@
 import { useId } from "react";
 import { useField, Field } from "formik";
-import { getFilterButtonName } from "../FilterButton/getFilterButtonName";
+import { getFilterButtonName } from "../../utils/getFilterButtonName";
 import StyledFilterButton from "../StyledFilterButton/StyledFilterButton";
 import StyledFilterButtonText from "../StyledFilterButtonText/StyledFilterButtonText";
 import StyledFilterButtonIcon from "../StyledFilterButtonIcon/StyledFilterButtonIcon";

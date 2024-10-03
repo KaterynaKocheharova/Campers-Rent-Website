@@ -1,11 +1,12 @@
 import { useState, useEffect, useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectFilters } from "../../redux/filters/selectors";
 import {
   selectTotalItems,
   selectVehicles,
 } from "../../redux/vehicles/selectors";
-import { useFetchVehicles } from "../../hooks/useFetchVehicles";
+import { fetchVehicles } from "../../redux/vehicles/operations";
+import { cleanVehicles } from "../../redux/vehicles/slice";
 import { handleGalleryScrollDown } from "../../utils/handleGalleryScrolldown";
 import Button from "../common/Button/Button";
 
@@ -20,14 +21,27 @@ const LoadMoreButton = () => {
     [totalItems, limit]
   );
 
-  const { fetch } = useFetchVehicles(currentPage + 1);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setCurrentPage(1);
   }, [filters]);
 
   const handleLoadMoreClick = () => {
-    fetch().then(handleGalleryScrollDown);
+    dispatch(
+      fetchVehicles({
+        page: currentPage + 1,
+        limit: 4,
+        filters,
+        reset: false,
+      })
+    )
+      .unwrap()
+      .then(handleGalleryScrollDown)
+      .catch(() => {
+        dispatch(cleanVehicles());
+      });
+
     setCurrentPage((prev) => prev + 1);
   };
 
