@@ -1,14 +1,11 @@
-import { useSelector, useDispatch } from "react-redux";
-import { selectCurrentPage } from "../../redux/vehicles/selectors";
-import { changeCurrentPage } from "../../redux/vehicles/slice";
+import { useState } from "react";
 import { useFetchVehicles } from "../../hooks/useFetchVehicles";
 import Button from "../common/Button/Button";
 
 const LoadMoreButton = () => {
-  const currentPage = useSelector(selectCurrentPage);
-  const { fetch } = useFetchVehicles(currentPage + 1);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const dispatch = useDispatch();
+  const { fetch } = useFetchVehicles(currentPage + 1);
 
   const handleGalleryScrollDown = () => {
     window.scrollBy({
@@ -18,8 +15,8 @@ const LoadMoreButton = () => {
   };
 
   const handleLoadMoreClick = () => {
-    dispatch(changeCurrentPage(currentPage + 1));
     fetch().then(handleGalleryScrollDown);
+    setCurrentPage((prev) => prev + 1);
   };
 
   return (

@@ -2,12 +2,10 @@ import { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectVehicles,
-  selectCurrentPage,
   selectTotalItems,
   selectIsLoadingVehicles,
   selectError,
 } from "../../redux/vehicles/selectors";
-import { changeCurrentPage } from "../../redux/vehicles/slice";
 import { fetchVehicles } from "../../redux/vehicles/operations";
 import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
@@ -22,7 +20,6 @@ const CatalogPage = () => {
   const error = useSelector(selectError);
   const vehicles = useSelector(selectVehicles);
   const totalItems = useSelector(selectTotalItems);
-  const currentPage = useSelector(selectCurrentPage);
   const limit = 4;
 
   const dispatch = useDispatch();
@@ -33,7 +30,6 @@ const CatalogPage = () => {
   );
 
   useEffect(() => {
-    dispatch(changeCurrentPage(1));
     dispatch(fetchVehicles({ page: 1, limit }));
   }, [dispatch]);
 
@@ -45,9 +41,7 @@ const CatalogPage = () => {
         <div className={css["page-layout"]}>
           <div className={css.catalog}>
             <VehiclesList vehicles={vehicles} />
-            {vehicles.length > 0 && currentPage < totalPages && (
-              <LoadMoreButton />
-            )}
+            <LoadMoreButton />
           </div>
         </div>
       </Container>
