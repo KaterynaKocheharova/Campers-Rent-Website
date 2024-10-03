@@ -5,7 +5,9 @@ import StyledFilterButtonText from "../StyledFilterButtonText/StyledFilterButton
 import StyledFilterButtonIcon from "../StyledFilterButtonIcon/StyledFilterButtonIcon";
 import css from "./FilterVehicleTypeRadio.module.css";
 
-const FilterVehicleTypeRadio = ({ filterData: { icon, name } }) => {
+const FilterVehicleTypeRadio = ({
+  filterData: { icon, name, normalizedName },
+}) => {
   const [field, meta] = useField({
     name: "vehicleType",
   });
@@ -22,7 +24,7 @@ const FilterVehicleTypeRadio = ({ filterData: { icon, name } }) => {
         checked={field.value === name}
       />
       <StyledFilterButtonIcon path={`/sprite.svg#${icon}`} />
-      <StyledFilterButtonText>{name}</StyledFilterButtonText>
+      <StyledFilterButtonText>{normalizedName}</StyledFilterButtonText>
     </StyledFilterButton>
   );
 };

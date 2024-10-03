@@ -5,15 +5,18 @@ import FilterTitle from "../FilterTitle/FilterTitle";
 const vehicleTypeFilters = [
   {
     name: "panelTruck",
+    normalizedName: "van",
     icon: "icon-3grid",
   },
   {
     name: "fullyIntegrated",
     icon: "icon-4grid",
+    normalizedName: "Fully Integrated",
   },
   {
     name: "alcove",
     icon: "icon-9grid",
+    normalizedName: "Alcove",
   },
 ];
 

@@ -3,6 +3,8 @@ import { Formik, Form } from "formik";
 import LocationFilter from "../LocationFilter/LocationFilter";
 import EquipmentFilter from "../EquipmentFilter/EquipmentFilter";
 import VehicleTypeFilter from "../VehicleTypeFilter/VehicleTypeFilter";
+import Button from "../common/Button/Button";
+
 import css from "./FiltrationForm.module.css";
 
 const BookingForm = () => {
@@ -36,7 +38,9 @@ const BookingForm = () => {
         <h2 className={css["filters-title"]}>Filters</h2>
         <EquipmentFilter />
         <VehicleTypeFilter />
-        <button type="submit">Search</button>
+        <Button type="submit" extraClass="search-button">
+          Search
+        </Button>
       </Form>
     </Formik>
   );
