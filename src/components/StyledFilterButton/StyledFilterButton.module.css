@@ -1,0 +1,16 @@
+.button {
+  position: relative;
+  width: calc((100% - 24px) / 3);
+  height: 96px;
+  border-radius: 12px;
+  border: var(--main-border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  border: 1px solid var(--red-light);
+}

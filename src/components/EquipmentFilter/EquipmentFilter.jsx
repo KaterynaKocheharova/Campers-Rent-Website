@@ -1,15 +1,6 @@
-import { useSelector, useDispatch } from "react-redux";
-import {
-  selectVehicleEquipmentFilter,
-  selectVehicleTransmissionFilter,
-} from "../../redux/filters/selectors";
-import {
-  changeVehicleEquipmentFilter,
-  changeVehicleTransmissionFilter,
-} from "../../redux/filters/slice";
 import FilterButtonsGrid from "../FilterButtonsGrid/FilterButtonsGrid";
-import FilterButton from "../FilterButton/FilterButton";
 import FilterTitle from "../FilterTitle/FilterTitle";
+import FilterEquipmentCheckbox from "../FilterEquipmentCheckbox/FilterEquipmentCheckbox";
 
 export const equipmentFilters = [
   {
@@ -32,41 +23,23 @@ export const equipmentFilters = [
 ];
 
 const EquipmentFilter = () => {
-  const equipment = useSelector(selectVehicleEquipmentFilter);
-  const vehicleTransmissionFilter = useSelector(
-    selectVehicleTransmissionFilter
-  );
-  const dispatch = useDispatch();
-
-  const handleChangeVehicleEquipmentFilter = (clickedEquipment) => {
-    dispatch(changeVehicleEquipmentFilter(clickedEquipment));
-  };
-
   return (
     <>
       <FilterTitle>Vehicle equipment</FilterTitle>
-      <FilterButtonsGrid>
+      <FilterButtonsGrid name="checkedEquipment">
         {equipmentFilters.map((equipmentFilter, index) => {
           if (equipmentFilter.name === "transmission") {
             return (
-              <FilterButton
+              <FilterEquipmentCheckbox
                 key={index}
-                isSelected={vehicleTransmissionFilter === "Automatic"}
                 variant="equipment"
-                changeFilterHandler={() =>
-                  dispatch(changeVehicleTransmissionFilter())
-                }
                 filterData={{ ...equipmentFilter, name: "Automatic" }}
               />
             );
           } else {
             return (
-              <FilterButton
+              <FilterEquipmentCheckbox
                 key={index}
-                isSelected={equipment.includes(equipmentFilter.name)}
-                changeFilterHandler={() =>
-                  handleChangeVehicleEquipmentFilter(equipmentFilter.name)
-                }
                 filterData={equipmentFilter}
                 variant="equipment"
               />

@@ -42,12 +42,6 @@
   fill: var(--main-font-color);
 }
 
-.error {
-  position: absolute;
-  font-size: 14px;
-  color: var(--red-light);
-  left: 0;
-}
 
 .error-input {
   border: 1px solid var(--red-light)

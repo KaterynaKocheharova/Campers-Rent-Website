@@ -2,5 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.relative {
+  position: relative;
   margin-bottom: 32px;
 }
