@@ -8,6 +8,7 @@ const Button = ({
   vehicleId,
   handleClick,
   currentLocation,
+  ...props
 }) => {
   if (extraClass === "hero-link") {
     return (
@@ -33,7 +34,7 @@ const Button = ({
     <button
       onClick={handleClick}
       className={clsx(css.button, extraClass && css[extraClass])}
-      type="submit"
+      {...props}
     >
       {children}
     </button>

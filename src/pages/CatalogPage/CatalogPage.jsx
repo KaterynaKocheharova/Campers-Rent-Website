@@ -10,6 +10,7 @@ import Section from "../../components/common/Section/Section";
 import Container from "../../components/common/Container/Container";
 import VehiclesList from "../../components/VehiclesList/VehiclesList";
 import LoadMoreButton from "../../components/LoadMoreButton/LoadMoreButton";
+import FiltrationForm from "../../components/FiltrationForm/FiltrationForm";
 import Error from "../../components/common/Error/Error";
 import Loader from "../../components/common/Loader/Loader";
 import css from "./CatalogPage.module.css";
@@ -32,6 +33,7 @@ const CatalogPage = () => {
         {error && <Error />}
         {isLoading && <Loader />}
         <div className={css["page-layout"]}>
+          <FiltrationForm />
           <div className={css.catalog}>
             <VehiclesList vehicles={vehicles} />
             <LoadMoreButton />

@@ -12,7 +12,6 @@
 //       <h2 className={css["filters-title"]}>Filters</h2>
 //       <EquipmentFilter />
 //       <VehicleTypeFilter />
-//       <FilterSearchButton />
 //     </section>
 //   );
 // };
