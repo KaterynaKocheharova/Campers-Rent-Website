@@ -1,13 +1,17 @@
 import { useState, useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { selectFilters } from "../../redux/filters/selectors";
-import { selectTotalItems } from "../../redux/vehicles/selectors";
+import {
+  selectTotalItems,
+  selectVehicles,
+} from "../../redux/vehicles/selectors";
 import { useFetchVehicles } from "../../hooks/useFetchVehicles";
 import { handleGalleryScrollDown } from "../../utils/handleGalleryScrolldown";
 import Button from "../common/Button/Button";
 
 const LoadMoreButton = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const vehicles = useSelector(selectVehicles);
   const filters = useSelector(selectFilters);
   const totalItems = useSelector(selectTotalItems);
   const limit = 4;
@@ -29,7 +33,7 @@ const LoadMoreButton = () => {
 
   return (
     <>
-      {currentPage < totalPages && (
+      {currentPage < totalPages && !vehicles.length && (
         <Button handleClick={handleLoadMoreClick} extraClass="load-more-button">
           Load more
         </Button>
