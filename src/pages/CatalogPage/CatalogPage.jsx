@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   selectVehicles,
   selectIsLoadingVehicles,
-  selectError,
 } from "../../redux/vehicles/selectors";
 import { fetchVehicles } from "../../redux/vehicles/operations";
 import Section from "../../components/common/Section/Section";
@@ -11,13 +10,11 @@ import Container from "../../components/common/Container/Container";
 import VehiclesList from "../../components/VehiclesList/VehiclesList";
 import LoadMoreButton from "../../components/LoadMoreButton/LoadMoreButton";
 import FiltrationForm from "../../components/FiltrationForm/FiltrationForm";
-import Error from "../../components/common/Error/Error";
 import Loader from "../../components/common/Loader/Loader";
 import css from "./CatalogPage.module.css";
 
 const CatalogPage = () => {
   const isLoading = useSelector(selectIsLoadingVehicles);
-  const error = useSelector(selectError);
   const vehicles = useSelector(selectVehicles);
   const limit = 4;
 
@@ -30,7 +27,6 @@ const CatalogPage = () => {
   return (
     <Section>
       <Container>
-        {error && <Error />}
         {isLoading && <Loader />}
         <div className={css["page-layout"]}>
           <FiltrationForm />

@@ -53,10 +53,7 @@ const FiltrationForm = () => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-    >
+    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       <Form className={css["filtration-form"]}>
         <LocationFilter />
         <h2 className={css["filters-title"]}>Filters</h2>
