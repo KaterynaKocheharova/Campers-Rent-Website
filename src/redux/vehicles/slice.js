@@ -38,6 +38,11 @@ const vehiclesSlice = createSlice({
       })
       .addCase(fetchVehicles.rejected, handleError);
   },
+  reducers: {
+    cleanVehicles(state) {
+      state.items = [];
+    },
+  },
 });
 
 export const { cleanVehicles } = vehiclesSlice.actions;
