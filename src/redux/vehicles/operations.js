@@ -5,7 +5,7 @@ axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 
 export const fetchVehicles = createAsyncThunk(
   "vehicles/fetchAll",
-  async ({ page, limit, filters = {} }, thunkAPI) => {
+  async ({ page, limit, filters = {}, reset = false }, thunkAPI) => {
     try {
       const {
         location,
@@ -36,7 +36,7 @@ export const fetchVehicles = createAsyncThunk(
 
       const { data } = await axios.get("/campers", { params });
 
-      return data;
+      return { reset, ...data };
     } catch (error) {
       if (error.message === "Request failed with status code 404") {
         return thunkAPI.rejectWithValue("Items matching your filter not found");

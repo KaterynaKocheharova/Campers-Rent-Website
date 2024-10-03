@@ -6,6 +6,11 @@ export const handleError = (state, action) => {
   state.error = action.payload;
 };
 
+export const handlePending = (state) => {
+  state.loading = true;
+  state.error = null;
+};
+
 const vehiclesInitialState = {
   items: [],
   totalItems: 0,
@@ -18,23 +23,20 @@ const vehiclesSlice = createSlice({
   initialState: vehiclesInitialState,
   extraReducers: (builder) => {
     builder
-      .addCase(fetchVehicles.pending, (state) => {
-        state.loading = true;
-      })
+      .addCase(fetchVehicles.pending, handlePending)
       .addCase(fetchVehicles.fulfilled, (state, action) => {
-        const { items, total } = action.payload;
-
+        const { items, total, reset } = action.payload;
         state.error = null;
         state.loading = false;
-        state.items = [...state.items, ...items];
+        if (reset) {
+          state.items = items;
+        } else {
+          state.items = [...state.items, ...items];
+        }
+
         state.totalItems = total;
       })
       .addCase(fetchVehicles.rejected, handleError);
-  },
-  reducers: {
-    cleanVehicles: (state) => {
-      state.items = [];
-    },
   },
 });
 

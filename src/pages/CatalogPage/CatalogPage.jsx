@@ -1,8 +1,7 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectVehicles,
-  selectTotalItems,
   selectIsLoadingVehicles,
   selectError,
 } from "../../redux/vehicles/selectors";
@@ -19,18 +18,12 @@ const CatalogPage = () => {
   const isLoading = useSelector(selectIsLoadingVehicles);
   const error = useSelector(selectError);
   const vehicles = useSelector(selectVehicles);
-  const totalItems = useSelector(selectTotalItems);
   const limit = 4;
 
   const dispatch = useDispatch();
 
-  const totalPages = useMemo(
-    () => Math.ceil(totalItems / limit),
-    [totalItems, limit]
-  );
-
   useEffect(() => {
-    dispatch(fetchVehicles({ page: 1, limit }));
+    dispatch(fetchVehicles({ page: 1, limit, reset: true }));
   }, [dispatch]);
 
   return (
