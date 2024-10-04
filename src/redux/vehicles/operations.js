@@ -15,7 +15,10 @@ export const fetchVehicles = createAsyncThunk(
         vehicleEquipment = [],
       } = filters;
 
-      const params = {};
+      const params = {
+        page,
+        limit: 4,
+      };
 
       if (location) {
         params.location = location;
@@ -31,8 +34,6 @@ export const fetchVehicles = createAsyncThunk(
           params[equipment] = true;
         }
       });
-
-      params.page = page;
 
       const { data } = await axios.get("/campers", {
         params: {
