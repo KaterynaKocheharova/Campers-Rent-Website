@@ -1,5 +1,4 @@
-import { useRef, useEffect } from "react";
-import { scrollToSubpage } from "../../utils/scrollToSubpage";
+import { useRef } from "react";
 import { useFetchVehicleDetails } from "../../hooks/useFetchVehicleDetails";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import css from "./Reviews.module.css";
@@ -10,12 +9,6 @@ const Reviews = () => {
   const { reviews } = vehicleData || {};
 
   const componentRef = useRef();
-
-  useEffect(() => {
-    if (componentRef.current) {
-      scrollToSubpage(componentRef.current);
-    }
-  }, []);
 
   return (
     <ul ref={componentRef} className={css.list}>
