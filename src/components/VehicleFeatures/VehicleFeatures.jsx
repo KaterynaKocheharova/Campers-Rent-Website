@@ -12,11 +12,11 @@ const VehicleFeatures = () => {
   const { engine, transmission } = vehicleData || {};
   const componentRef = useRef();
 
-  useEffect(() => {
-    if (componentRef.current) {
-      scrollToSubpage(componentRef.current);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (componentRef.current) {
+  //     scrollToSubpage(componentRef.current);
+  //   }
+  // }, []);
 
   const availableCategories = useGetAvailableCategories(vehicleData);
 
