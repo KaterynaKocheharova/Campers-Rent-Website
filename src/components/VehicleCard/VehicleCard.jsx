@@ -46,7 +46,6 @@ const VehicleCard = ({ vehicleData }) => {
               {description}
             </Text>
             <CategoriesList
-              variant="card"
               availableCategories={availableCategories}
               transmission={transmission}
               engine={engine}

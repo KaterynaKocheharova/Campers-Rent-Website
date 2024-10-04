@@ -15,7 +15,6 @@ const VehicleFeatures = () => {
     <div className={css["features-container"]}>
       <div className={css["features-content"]}>
         <CategoriesList
-          variant="details"
           extraClass="mb100"
           availableCategories={availableCategories}
           engine={engine}
