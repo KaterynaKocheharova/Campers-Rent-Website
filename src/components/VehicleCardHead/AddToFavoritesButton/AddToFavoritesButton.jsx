@@ -15,12 +15,11 @@ const AddToFavoritesButton = ({ id }) => {
   };
 
   return (
-    <svg
-      onClick={handleClick}
-      className={clsx(css.icon, isFavorite && css.favorite)}
-    >
-      <use href="/sprite.svg#icon-heart"></use>
-    </svg>
+    <button onClick={handleClick}>
+      <svg className={clsx(css.icon, isFavorite && css.favorite)}>
+        <use href="/sprite.svg#icon-heart"></use>
+      </svg>
+    </button>
   );
 };
 
