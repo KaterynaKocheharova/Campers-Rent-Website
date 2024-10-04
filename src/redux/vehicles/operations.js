@@ -1,11 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { formatLocation } from "../../utils/formatLocation";
 import axios from "axios";
 
 axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 
 export const fetchVehicles = createAsyncThunk(
   "vehicles/fetchAll",
-  // reset is for redux vehicles reducer to know if it should spread or overwrite items in the array of vehicle
+  // reset will be passed redux vehicles reducer to know if it should spread or overwrite items in the array of vehicle
   async ({ page, filters = {}, reset = false }, thunkAPI) => {
     try {
       const {
@@ -21,7 +22,7 @@ export const fetchVehicles = createAsyncThunk(
       };
 
       if (location) {
-        params.location = location;
+        params.location = formatLocation(location);
       }
       if (vehicleType) {
         params.form = vehicleType;

@@ -24,7 +24,7 @@ const LocationFilter = () => {
           )}
           id={filterInputId}
           type="text"
-          placeholder="City"
+          placeholder="Kyiv, Ukraine"
         />
         <svg className={css["map-icon"]}>
           <use href="/sprite.svg#icon-map"></use>
