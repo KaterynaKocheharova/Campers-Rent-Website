@@ -17,13 +17,12 @@ const DetailsPage = () => {
   const { vehicleData, error, loading } = useFetchVehicleDetails();
   const currentLocation = useLocation();
   const backLinkHref = useRef(currentLocation.state ?? "/catalog");
-  console.log(backLinkHref.current);
 
   const {
     name,
     price,
     rating,
-    location,
+    location: vehicleLocation,
     description,
     gallery = [],
     reviews,
@@ -38,9 +37,15 @@ const DetailsPage = () => {
       <Container>
         <div className={css.top}>
           <div className={css["top-flex"]}>
-            {name && rating && location && price && reviews && (
+            {name && rating && vehicleLocation && price && reviews && (
               <VehicleCardHead
-                headData={{ name, rating, location, price, reviews }}
+                headData={{
+                  name,
+                  rating,
+                  location: vehicleLocation,
+                  price,
+                  reviews,
+                }}
                 variant="details"
               />
             )}

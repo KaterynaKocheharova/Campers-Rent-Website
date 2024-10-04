@@ -22,7 +22,7 @@ const Button = ({
     return (
       <Link
         className={clsx(css.button, css["show-more-link"])}
-        to={`/catalog/${vehicleId}/features`}
+        to={`/catalog/${vehicleId}`}
         state={currentLocation}
       >
         {children}
