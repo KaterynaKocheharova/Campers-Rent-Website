@@ -1,7 +1,19 @@
 .location-flex {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 4px;
+}
+
+.location-flex p {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .location-flex {
+    flex-direction: row;
+  }
 }
 
 .icon {
