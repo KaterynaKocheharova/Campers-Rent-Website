@@ -25,6 +25,12 @@
   outline: none;
 }
 
+@media screen and (min-width: 500px) and (max-width: 1390px) {
+  .input {
+    width: 50%;
+  }
+}
+
 .map-icon {
   position: absolute;
   width: 20px;
@@ -42,7 +48,6 @@
   fill: var(--main-font-color);
 }
 
-
 .error-input {
-  border: 1px solid var(--red-light)
+  border: 1px solid var(--red-light);
 }
