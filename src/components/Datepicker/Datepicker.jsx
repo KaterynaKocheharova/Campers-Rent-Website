@@ -3,7 +3,7 @@ import { CiCalendar } from "react-icons/ci";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Dtepicker.css";
 
-const Datepicker = ({ selected, onChange }) => {
+const Datepicker = ({ selected, onChange, isError }) => {
   return (
     <DatePicker
       showIcon

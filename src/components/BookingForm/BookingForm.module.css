@@ -28,6 +28,10 @@
   border: none;
 }
 
+.error-input {
+  border: 1px solid var(--red-dark);
+}
+
 .input::placeholder {
   color: var(--dark-gray);
 }

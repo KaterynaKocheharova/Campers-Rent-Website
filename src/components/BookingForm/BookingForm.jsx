@@ -44,7 +44,7 @@ const BookingForm = () => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ values, setFieldValue, isSubmitting }) => (
+      {({ values, setFieldValue, isSubmitting, errors, touched }) => (
         <Form className={css["form-container"]}>
           <H3Title extraClass="form">Book your campervan now</H3Title>
           <Text variant="light" extraClass="mb24">
@@ -52,7 +52,13 @@ const BookingForm = () => {
           </Text>
           <div className={css.inputs}>
             <div className={css["relative"]}>
-              <Field className={css.input} name="name" placeholder="Name*" />
+              <Field
+                className={clsx(css.input, {
+                  [css["error-input"]]: errors.name && touched.name,
+                })}
+                name="name"
+                placeholder="Name*"
+              />
               <ErrorMessage
                 className={css.error}
                 name="name"
@@ -61,7 +67,9 @@ const BookingForm = () => {
             </div>
             <div className={css["relative"]}>
               <Field
-                className={css.input}
+                className={clsx(css.input, {
+                  [css["error-input"]]: errors.email && touched.email,
+                })}
                 name="email"
                 type="email"
                 placeholder="Email*"
@@ -74,6 +82,7 @@ const BookingForm = () => {
             </div>
             <div className={css["relative"]}>
               <Datepicker
+                isError={errors.bookingDate && touched.bookingDate}
                 selected={values.bookingDate}
                 onChange={(date) => setFieldValue("bookingDate", date)}
               />
@@ -86,7 +95,9 @@ const BookingForm = () => {
             <div className={css["relative"]}>
               <Field
                 style={{ width: "100%" }}
-                className={clsx(css.input, css.textarea)}
+                className={clsx(css.input, css.textarea, {
+                  [css["error-input"]]: errors.comment && touched.comment,
+                })}
                 name="comment"
                 as="textarea"
                 placeholder="Comment"
@@ -98,6 +109,7 @@ const BookingForm = () => {
               />
             </div>
           </div>
+
           <div className={css.center}>
             <Button
               extraClass={isSubmitting && "disabled"}

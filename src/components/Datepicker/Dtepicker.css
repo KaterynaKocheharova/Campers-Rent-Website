@@ -7,6 +7,10 @@
   border: none;
 }
 
+.error-input {
+  border: 1px solid var(--red-dark);
+}
+
 .react-datepicker__view-calendar-icon input::placeholder {
   color: var(--dark-gray);
 }
