@@ -5,46 +5,37 @@ import css from "./Button.module.css";
 const Button = ({
   children,
   extraClass,
-  vehicleId,
   handleClick,
-  currentLocation,
   disabled,
+  variant,
   ...props
 }) => {
-  if (extraClass === "hero-link") {
-    return (
-      <Link className={clsx(css.button, css["hero-link"])} to="/catalog">
-        {children}
-      </Link>
-    );
-  }
-
-  if (extraClass === "show-more-link") {
+  if (variant === "link") {
     return (
       <Link
-        className={clsx(css.button, css["show-more-link"])}
-        to={`/catalog/${vehicleId}`}
-        state={currentLocation}
+        className={clsx(css.button, css[extraClass])}
+        to="/catalog"
+        {...props}
       >
         {children}
       </Link>
     );
+  } else {
+    return (
+      <button
+        onClick={handleClick}
+        className={clsx(
+          css.button,
+          extraClass && css[extraClass],
+          disabled && css.disabled
+        )}
+        disabled={disabled}
+        {...props}
+      >
+        {children}
+      </button>
+    );
   }
-
-  return (
-    <button
-      onClick={handleClick}
-      className={clsx(
-        css.button,
-        extraClass && css[extraClass],
-        disabled && css.disabled
-      )}
-      disabled={disabled}
-      {...props}
-    >
-      {children}
-    </button>
-  );
 };
 
 export default Button;
