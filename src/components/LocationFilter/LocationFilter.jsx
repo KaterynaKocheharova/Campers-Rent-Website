@@ -1,14 +1,10 @@
 import { useId } from "react";
-import { Field, useField } from "formik";
+import { Field } from "formik";
 import StyledErrorMessage from "../StyledErrorMessage/StyledErrorMessage";
-import clsx from "clsx";
 import css from "./LocationFilter.module.css";
 
 const LocationFilter = () => {
   const filterInputId = useId();
-  const [, meta] = useField({
-    name: "location",
-  });
 
   return (
     <div className={css["location-group"]}>
@@ -18,10 +14,7 @@ const LocationFilter = () => {
       <div className={css["input-group"]}>
         <Field
           name="location"
-          className={clsx(
-            css.input,
-            meta.touched && meta.error && css["error-input"]
-          )}
+          className={css.input}
           id={filterInputId}
           type="text"
           placeholder="Kyiv, Ukraine"
