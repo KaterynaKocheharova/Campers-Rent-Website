@@ -6,15 +6,13 @@
 
 .appbar-flex {
   display: flex;
-  gap: 10px;
   align-items: center;
   justify-content: space-between;
 }
 
 @media screen and (min-width: 1440px) {
   .appbar-flex {
-    gap: 450px;
-    justify-content: unset;
+    gap: 450px;  
   }
 }
 
