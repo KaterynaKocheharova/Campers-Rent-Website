@@ -17,12 +17,19 @@ const BookingForm = () => {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required("Name is required"),
+    name: Yup.string()
+      .trim()
+      .max(50, "Name can't exceed 50 characters")
+      .required("Name is required"),
     email: Yup.string()
       .email("Invalid email format")
       .required("Email is required"),
-    bookingDate: Yup.date().required("Booking date is required"),
-    comment: Yup.string(),
+    bookingDate: Yup.date()
+      .required("Booking date is required")
+      .min(new Date(), "Booking date cannot be in the past"),
+    comment: Yup.string()
+      .trim()
+      .max(500, "Comment can't exceed 500 characters"),
   });
 
   const handleSubmit = (values, { resetForm, setSubmitting }) => {
@@ -92,7 +99,12 @@ const BookingForm = () => {
             </div>
           </div>
           <div className={css.center}>
-            <Button extraClass={isSubmitting && "disabled"} disabled={isSubmitting}>Send</Button>
+            <Button
+              extraClass={isSubmitting && "disabled"}
+              disabled={isSubmitting}
+            >
+              Send
+            </Button>
           </div>
         </Form>
       )}
