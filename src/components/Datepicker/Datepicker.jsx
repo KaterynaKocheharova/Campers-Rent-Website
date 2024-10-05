@@ -6,6 +6,7 @@ import "./Dtepicker.css";
 const Datepicker = ({ selected, onChange, isError }) => {
   return (
     <DatePicker
+      className={isError ? "error-input" : ""}
       showIcon
       icon={<CiCalendar />}
       toggleCalendarOnIconClick
