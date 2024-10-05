@@ -25,7 +25,7 @@ const CatalogPage = () => {
   return (
     <Section>
       <Container>
-        {isLoading && <Loader />}
+        {/* {isLoading && <Loader />} */}
         <div className={css["page-layout"]}>
           <FiltrationForm />
           <div className={css.catalog}>

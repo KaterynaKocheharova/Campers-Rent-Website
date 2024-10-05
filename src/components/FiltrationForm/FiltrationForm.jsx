@@ -12,8 +12,6 @@ import Button from "../common/Button/Button";
 import css from "./FiltrationForm.module.css";
 
 const FiltrationForm = () => {
-  const reset = true;
-
   const initialValues = {
     location: "",
     checkedEquipment: [],
@@ -22,11 +20,12 @@ const FiltrationForm = () => {
 
   const dispatch = useDispatch();
 
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, { setSubmitting }) => {
     const { location, checkedEquipment, vehicleType } = values;
 
     if (!location && !checkedEquipment.length && !vehicleType) {
       activateErrorToast("At least one filter should be chosen");
+      setSubmitting(false);
       return;
     }
 
@@ -43,26 +42,33 @@ const FiltrationForm = () => {
 
     dispatch(changeFilter(newFilters));
 
-    const reset = true;
-
-    dispatch(fetchVehicles({ page: 1, filters: newFilters, reset }))
+    dispatch(fetchVehicles({ page: 1, filters: newFilters, reset: true }))
       .unwrap()
       .catch(() => {
         dispatch(cleanVehicles());
+      })
+      .finally(() => {
+        setSubmitting(false);
       });
   };
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-      <Form className={css["filtration-form"]}>
-        <LocationFilter />
-        <h2 className={css["filters-title"]}>Filters</h2>
-        <EquipmentFilter />
-        <VehicleTypeFilter />
-        <Button type="submit" extraClass="search-button">
-          Search
-        </Button>
-      </Form>
+      {({ isSubmitting }) => (
+        <Form className={css["filtration-form"]}>
+          <LocationFilter />
+          <h2 className={css["filters-title"]}>Filters</h2>
+          <EquipmentFilter />
+          <VehicleTypeFilter />
+          <Button
+            type="submit"
+            extraClass="search-button"
+            disabled={isSubmitting}
+          >
+            Search
+          </Button>
+        </Form>
+      )}
     </Formik>
   );
 };

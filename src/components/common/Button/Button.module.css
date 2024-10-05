@@ -64,6 +64,8 @@
   padding-right: 63px;
 }
 
-.disabled {
+.button.disabled {
+  cursor: not-allowed;
   background-color: var(--gray);
+  color: var(--main-font-color);
 }
