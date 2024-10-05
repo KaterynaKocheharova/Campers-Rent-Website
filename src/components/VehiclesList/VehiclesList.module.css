@@ -4,6 +4,15 @@
   row-gap: 32px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1390px) {
+  .list {
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
 .error-container {
   width: 100%;
   height: 100%;
