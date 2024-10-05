@@ -24,10 +24,22 @@
 }
 
 .show-more-link {
-  width: 166px;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
 }
+
+@media screen and (min-width: 768px) {
+  .show-more-link {
+    width: 166px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+
 
 .load-more-button {
   margin-right: auto;
