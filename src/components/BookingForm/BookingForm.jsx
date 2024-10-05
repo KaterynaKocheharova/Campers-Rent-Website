@@ -25,8 +25,9 @@ const BookingForm = () => {
     comment: Yup.string(),
   });
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (values, { resetForm, setSubmitting }) => {
     activateSuccessToast("Booking successful!");
+    setSubmitting(false);
     resetForm();
   };
 
@@ -36,7 +37,7 @@ const BookingForm = () => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ values, setFieldValue }) => (
+      {({ values, setFieldValue, isSubmitting }) => (
         <Form className={css["form-container"]}>
           <H3Title extraClass="form">Book your campervan now</H3Title>
           <Text variant="light" extraClass="mb24">
@@ -91,7 +92,7 @@ const BookingForm = () => {
             </div>
           </div>
           <div className={css.center}>
-            <Button>Send</Button>
+            <Button extraClass={isSubmitting && "disabled"} disabled={isSubmitting}>Send</Button>
           </div>
         </Form>
       )}

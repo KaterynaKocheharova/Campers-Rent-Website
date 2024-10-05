@@ -39,8 +39,6 @@
   }
 }
 
-
-
 .load-more-button {
   margin-right: auto;
   margin-left: auto;
@@ -64,4 +62,8 @@
   width: 163px;
   padding-left: 63px;
   padding-right: 63px;
+}
+
+.disabled {
+  background-color: var(--gray);
 }
