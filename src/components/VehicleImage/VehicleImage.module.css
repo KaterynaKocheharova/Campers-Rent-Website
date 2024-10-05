@@ -1,13 +1,14 @@
 .image-container {
-  min-height: 320px;
   overflow: hidden;
   border-radius: 10px;
-  margin-right: 24px;
+  margin-bottom: 24px;
 }
 
 @media screen and (min-width: 1440px) {
   .image-container {
     width: 292px;
+    min-height: 320px;
+    margin-right: 24px;
   }
 }
 

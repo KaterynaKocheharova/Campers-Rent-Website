@@ -22,7 +22,13 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+@media screen and (min-width: 1440px) {
+  .title {
+    margin-bottom: 8px;
+  }
 }
 
 .rating-location-flex {
