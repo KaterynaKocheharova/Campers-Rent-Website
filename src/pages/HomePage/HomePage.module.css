@@ -7,6 +7,7 @@
   background-size: cover;
   background-position: center;
   color: var(--gray);
+  background-color: var(--dark-gray);
 }
 
 @media screen and (min-resolution: 192dpi),
