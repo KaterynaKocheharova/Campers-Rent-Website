@@ -1,5 +1,6 @@
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import FormField from "../FormField/FormField";
 import { activateSuccessToast } from "../../utils/toast";
 import H3Title from "../common/H3Title/H3Title";
 import Text from "../common/Text/Text";
@@ -52,35 +53,8 @@ const BookingForm = () => {
             Stay connected! We are always ready to help you.
           </Text>
           <div className={css.inputs}>
-            <div className={css["relative"]}>
-              <Field
-                className={clsx(css.input, {
-                  [css["error-input"]]: errors.name && touched.name,
-                })}
-                name="name"
-                placeholder="Name*"
-              />
-              <ErrorMessage
-                className={css.error}
-                name="name"
-                render={(msg) => <div className={css.error}>{msg}</div>}
-              />
-            </div>
-            <div className={css["relative"]}>
-              <Field
-                className={clsx(css.input, {
-                  [css["error-input"]]: errors.email && touched.email,
-                })}
-                name="email"
-                type="email"
-                placeholder="Email*"
-              />
-              <ErrorMessage
-                className={css.error}
-                name="email"
-                render={(msg) => <div className={css.error}>{msg}</div>}
-              />
-            </div>
+            <FormField name="name" placeholder="Name*" />
+            <FormField name="email" type="email" placeholder="Email*" />
             <div className={css["relative"]}>
               <Datepicker
                 isError={errors.bookingDate && touched.bookingDate}
@@ -93,24 +67,14 @@ const BookingForm = () => {
                 render={(msg) => <div className={css.error}>{msg}</div>}
               />
             </div>
-            <div className={css["relative"]}>
-              <Field
-                style={{ width: "100%" }}
-                className={clsx(css.input, css.textarea, {
-                  [css["error-input"]]: errors.comment && touched.comment,
-                })}
-                name="comment"
-                as="textarea"
-                placeholder="Comment"
-              />
-              <ErrorMessage
-                className={css.error}
-                name="comment"
-                render={(msg) => <div className={css.error}>{msg}</div>}
-              />
-            </div>
+            <FormField
+              style={{ width: "100%" }}
+              extraClass="textarea"
+              name="comment"
+              as="textarea"
+              placeholder="Comment"
+            />
           </div>
-
           <div className={css.center}>
             <Button
               extraClass={isSubmitting && "disabled"}

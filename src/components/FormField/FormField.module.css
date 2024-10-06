@@ -1,0 +1,28 @@
+.input {
+  width: 100%;
+  padding: 18px;
+  padding-right: 40px;
+  border-radius: 12px;
+  background-color: var(--gray);
+  outline: none;
+  border: none;
+}
+
+.error-input {
+  border: 1px solid var(--red-dark);
+}
+
+.input::placeholder {
+  color: var(--dark-gray);
+}
+
+.textarea {
+  width: 100%;
+  resize: none;
+  min-height: 118px;
+}
+
+.relative {
+  position: relative;
+}
+

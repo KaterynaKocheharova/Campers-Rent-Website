@@ -27,40 +27,6 @@
   margin-bottom: 24px;
 }
 
-.input {
-  width: 100%;
-  padding: 18px;
-  border-radius: 12px;
-  background-color: var(--gray);
-  outline: none;
-  border: none;
-}
-
-.error-input {
-  border: 1px solid var(--red-dark);
-}
-
-.input::placeholder {
-  color: var(--dark-gray);
-}
-
-.textarea {
-  width: 100%;
-  resize: none;
-  min-height: 118px;
-}
-
-.relative {
-  position: relative;
-}
-
-.error {
-  position: absolute;
-  bottom: -18px;
-  left: 0;
-  color: var(--red-dark);
-}
-
 .center {
   display: flex;
   justify-content: center;

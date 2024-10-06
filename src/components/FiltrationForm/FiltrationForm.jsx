@@ -74,7 +74,7 @@ const FiltrationForm = () => {
               Search
             </Button>
             <Button onClick={handleReset} type="reset" extraClass="reset-filters-button">
-              Clear filters
+              Drop filters
             </Button>
           </div>
         </Form>
