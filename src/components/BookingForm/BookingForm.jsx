@@ -27,7 +27,7 @@ const BookingForm = () => {
       .required("Email is required"),
     bookingDate: Yup.date()
       .required("Booking date is required")
-      .min(new Date(), "Booking date cannot be in the past"),
+      .min(new Date(), "Only future dates!"),
     comment: Yup.string()
       .trim()
       .max(500, "Comment can't exceed 500 characters"),

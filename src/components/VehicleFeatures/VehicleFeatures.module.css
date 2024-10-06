@@ -1,8 +1,13 @@
 .features-container {
-  min-height: 631px;
-  padding: 44px 52px;
+  padding: 20px;
   border-radius: 10px;
   background-color: var(--gray);
+}
+
+@media screen and (min-width: 768px) {
+  .features-container {
+    padding: 44px 52px;
+  }
 }
 
 @media screen and (min-width: 1440px) {

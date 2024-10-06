@@ -7,6 +7,8 @@
   border-radius: 14px;
   border: var(--main-border);
   font-size: 20px;
+  align-self: flex-end;
+  margin-bottom: 20px;
 }
 
 .icon {
@@ -15,8 +17,4 @@
   color: var(--red-dark);
 }
 
-@media screen and (max-width: 768px) {
-  .link {
-    margin-bottom: 20px;
-  }
-}
+

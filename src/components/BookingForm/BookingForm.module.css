@@ -1,14 +1,20 @@
 .form-container {
   min-height: 588px;
-  padding: 44px;
+  padding: 20px;
   border-radius: 10px;
   border: var(--main-border);
-  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .form-container {
+    padding: 44px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .form-container {
     width: 641px;
+    margin-left: auto;
   }
 }
 

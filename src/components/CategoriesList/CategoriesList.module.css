@@ -4,8 +4,14 @@
   gap: 8px;
 }
 
-.mb100 {
-  margin-bottom: 100px;
+.details-mb {
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .details-mb {
+    margin-bottom: 100px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
