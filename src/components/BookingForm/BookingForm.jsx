@@ -9,10 +9,11 @@ import clsx from "clsx";
 import css from "./BookingForm.module.css";
 
 const BookingForm = () => {
+  const date = new Date();
   const initialValues = {
     name: "",
     email: "",
-    bookingDate: null,
+    bookingDate: date,
     comment: "",
   };
 
