@@ -1,12 +1,13 @@
 import * as Yup from "yup";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form } from "formik";
 import FormField from "../FormField/FormField";
+import StyledFormErrorMessage from "../common/StyledFormErrorMessage/StyledFormErrorMessage";
+import RelativeContainer from "../common/RelativeContainer/RelativeContainer";
 import { activateSuccessToast } from "../../utils/toast";
 import H3Title from "../common/H3Title/H3Title";
 import Text from "../common/Text/Text";
 import Button from "../common/Button/Button";
 import Datepicker from "../Datepicker/Datepicker";
-import clsx from "clsx";
 import css from "./BookingForm.module.css";
 
 const BookingForm = () => {
@@ -55,18 +56,18 @@ const BookingForm = () => {
           <div className={css.inputs}>
             <FormField name="name" placeholder="Name*" />
             <FormField name="email" type="email" placeholder="Email*" />
-            <div className={css["relative"]}>
+            <RelativeContainer>
               <Datepicker
                 isError={errors.bookingDate && touched.bookingDate}
                 selected={values.bookingDate}
                 onChange={(date) => setFieldValue("bookingDate", date)}
               />
-              <ErrorMessage
-                className={css.error}
+              <StyledFormErrorMessage
                 name="bookingDate"
                 render={(msg) => <div className={css.error}>{msg}</div>}
+                component="div"
               />
-            </div>
+            </RelativeContainer>
             <FormField
               style={{ width: "100%" }}
               extraClass="textarea"

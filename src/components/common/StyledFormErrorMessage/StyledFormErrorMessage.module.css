@@ -1,7 +1,7 @@
 .error {
   position: absolute;
-  bottom: 1px;
+  font-size: 14px;
+  color: var(--red-light);
   right: 2px;
-  left: 0;
-  color: var(--red-dark);
+  bottom: 2px;
 }

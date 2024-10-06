@@ -1,5 +1,6 @@
 import { useField, Field } from "formik";
-import StyledErrorMessage from "../StyledErrorMessage/StyledErrorMessage";
+import StyledFormErrorMessage from "../common/StyledFormErrorMessage/StyledFormErrorMessage";
+import RelativeContainer from "../common/RelativeContainer/RelativeContainer";
 import clsx from "clsx";
 import css from "./FormField.module.css";
 
@@ -7,7 +8,7 @@ const FormField = ({ extraClass, ...props }) => {
   const [field, meta] = useField(props);
 
   return (
-    <div className={css["relative"]}>
+    <RelativeContainer>
       <Field
         className={clsx(css.input, {
           [css["error-input"]]: meta.touched && meta.error,
@@ -18,8 +19,8 @@ const FormField = ({ extraClass, ...props }) => {
         {...field}
         {...props}
       />
-      <StyledErrorMessage name={props.name} component="div" />
-    </div>
+      <StyledFormErrorMessage name={props.name} component="div" />
+    </RelativeContainer>
   );
 };
 

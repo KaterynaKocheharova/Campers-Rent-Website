@@ -1,4 +1,3 @@
-
 import DatePicker from "react-datepicker";
 import { CiCalendar } from "react-icons/ci";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,7 +7,6 @@ import { enUS } from "date-fns/locale";
 import { format } from "date-fns";
 
 const Datepicker = ({ onChange, isError, selected }) => {
-
   const customLocale = {
     ...enUS,
     options: {

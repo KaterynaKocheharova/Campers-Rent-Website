@@ -1,6 +1,6 @@
 import { useId } from "react";
 import { Field } from "formik";
-import StyledErrorMessage from "../StyledErrorMessage/StyledErrorMessage";
+import StyledFormErrorMessage from "../common/StyledFormErrorMessage/StyledFormErrorMessage";
 import css from "./LocationFilter.module.css";
 
 const LocationFilter = () => {
@@ -22,7 +22,7 @@ const LocationFilter = () => {
         <svg className={css["map-icon"]}>
           <use href="/sprite.svg#icon-map"></use>
         </svg>
-        <StyledErrorMessage name="location" component="p" />
+        <StyledFormErrorMessage name="location" />
       </div>
     </div>
   );
