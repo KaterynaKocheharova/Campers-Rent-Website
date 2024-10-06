@@ -1,3 +1,4 @@
+import { useState } from "react";
 import DatePicker from "react-datepicker";
 import { CiCalendar } from "react-icons/ci";
 import "react-datepicker/dist/react-datepicker.css";
@@ -6,7 +7,8 @@ import { registerLocale } from "react-datepicker";
 import { enUS } from "date-fns/locale";
 import { format } from "date-fns";
 
-const Datepicker = ({ selected, onChange, isError }) => {
+const Datepicker = ({ onChange, isError, selected }) => {
+
   const customLocale = {
     ...enUS,
     options: {

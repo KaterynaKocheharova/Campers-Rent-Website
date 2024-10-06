@@ -153,7 +153,8 @@
 .react-datepicker__day--selected,
 .react-datepicker__day:hover,
 .react-datepicker__day:focus,
-.react-datepicker__day:active {
+.react-datepicker__day:active,
+.react-datepicker__day--keyboard-selected {
   width: 36px !important;
   height: 32px !important;
   border-radius: 32px !important;
