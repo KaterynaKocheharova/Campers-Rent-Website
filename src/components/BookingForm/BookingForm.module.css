@@ -13,8 +13,10 @@
 
 @media screen and (min-width: 1440px) {
   .form-container {
+    padding: 44px 57px;
     width: 641px;
     margin-left: auto;
+    align-self: flex-start;
   }
 }
 
