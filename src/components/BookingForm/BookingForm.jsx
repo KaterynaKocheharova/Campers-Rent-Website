@@ -64,8 +64,6 @@ const BookingForm = () => {
               />
               <StyledFormErrorMessage
                 name="bookingDate"
-                render={(msg) => <div className={css.error}>{msg}</div>}
-                component="div"
               />
             </RelativeContainer>
             <FormField

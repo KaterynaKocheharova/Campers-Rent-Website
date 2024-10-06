@@ -19,7 +19,7 @@ const FormField = ({ extraClass, ...props }) => {
         {...field}
         {...props}
       />
-      <StyledFormErrorMessage name={props.name} component="div" />
+      <StyledFormErrorMessage name={props.name} />
     </RelativeContainer>
   );
 };

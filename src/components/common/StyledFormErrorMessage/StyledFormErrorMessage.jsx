@@ -3,7 +3,7 @@ import css from "./StyledFormErrorMessage.module.css";
 
 const StyledFormErrorMessage = ({ children, ...props }) => {
   return (
-    <ErrorMessage className={css.error} {...props}>
+    <ErrorMessage className={css.error} {...props} component="div">
       {children}
     </ErrorMessage>
   );
