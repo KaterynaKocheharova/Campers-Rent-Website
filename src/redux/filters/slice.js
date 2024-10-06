@@ -19,8 +19,14 @@ const filtersSlice = createSlice({
       state.vehicleEquipment = vehicleEquipment;
       state.transmission = transmission;
     },
+    cleanFilters(state) {
+      state.location = "";
+      state.vehicleType = "";
+      state.vehicleEquipment = [];
+      state.transmission = "";
+    },
   },
 });
 
-export const { changeFilter } = filtersSlice.actions;
+export const { changeFilter, cleanFilters } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

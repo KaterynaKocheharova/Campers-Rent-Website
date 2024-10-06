@@ -1,13 +1,19 @@
 @media screen and (min-width: 1440px) {
-    .filtration-form {
-      width: 360px;
-    }
+  .filtration-form {
+    width: 360px;
   }
-  
-  .filters-title {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--secondary-font-color);
-    margin-bottom: 32px;
-  }
-  
+}
+
+.filters-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--secondary-font-color);
+  margin-bottom: 32px;
+}
+
+.buttons-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}

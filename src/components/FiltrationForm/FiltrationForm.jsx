@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { changeFilter } from "../../redux/filters/slice";
+import { changeFilter, cleanFilters } from "../../redux/filters/slice";
 import { fetchVehicles } from "../../redux/vehicles/operations";
 import { cleanVehicles } from "../../redux/vehicles/slice";
 import { Formik, Form } from "formik";
@@ -52,6 +52,11 @@ const FiltrationForm = () => {
       });
   };
 
+  const handleReset = () => {
+    dispatch(cleanFilters());
+    dispatch(fetchVehicles({ page: 1, reset: true }));
+  };
+
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       {({ isSubmitting }) => (
@@ -60,13 +65,18 @@ const FiltrationForm = () => {
           <h2 className={css["filters-title"]}>Filters</h2>
           <EquipmentFilter />
           <VehicleTypeFilter />
-          <Button
-            type="submit"
-            extraClass="search-button"
-            disabled={isSubmitting}
-          >
-            Search
-          </Button>
+          <div className={css["buttons-flex"]}>
+            <Button
+              type="submit"
+              extraClass="search-button"
+              disabled={isSubmitting}
+            >
+              Search
+            </Button>
+            <Button onClick={handleReset} type="reset" extraClass="reset-filters-button">
+              Clear filters
+            </Button>
+          </div>
         </Form>
       )}
     </Formik>

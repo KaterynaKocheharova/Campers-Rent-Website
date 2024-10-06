@@ -19,6 +19,10 @@
 
 .search-button {
   width: 166px;
+}
+
+.reset-filters-button,
+.search-button {
   padding-right: 56.5px;
   padding-left: 56.5px;
 }
