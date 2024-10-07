@@ -36,6 +36,7 @@ const BookingForm = () => {
   });
 
   const handleSubmit = (values, { resetForm, setSubmitting }) => {
+    console.log(values);
     activateSuccessToast("Booking successful!");
     setSubmitting(false);
     resetForm();
