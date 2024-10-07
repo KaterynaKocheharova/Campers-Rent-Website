@@ -47,7 +47,7 @@ const BookingForm = () => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ values, setFieldValue, isSubmitting, errors, touched }) => (
+      {({ values, setFieldValue, isSubmitting }) => (
         <Form className={css["form-container"]}>
           <H3Title extraClass="form">Book your campervan now</H3Title>
           <Text variant="light" extraClass="mb24">
@@ -56,14 +56,10 @@ const BookingForm = () => {
           <div className={css.inputs}>
             <FormField name="name" placeholder="Name*" />
             <FormField name="email" type="email" placeholder="Email*" />
-            <RelativeContainer>
-              <Datepicker
-                isError={errors.bookingDate && touched.bookingDate}
-                selected={values.bookingDate}
-                onChange={(date) => setFieldValue("bookingDate", date)}
-              />
-              <StyledFormErrorMessage name="bookingDate" />
-            </RelativeContainer>
+            <Datepicker
+              selected={values.bookingDate}
+              onChange={(date) => setFieldValue("bookingDate", date)}
+            />
             <FormField
               extraClass="textarea"
               name="comment"
