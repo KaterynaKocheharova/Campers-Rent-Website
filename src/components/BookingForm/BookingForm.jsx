@@ -62,9 +62,7 @@ const BookingForm = () => {
                 selected={values.bookingDate}
                 onChange={(date) => setFieldValue("bookingDate", date)}
               />
-              <StyledFormErrorMessage
-                name="bookingDate"
-              />
+              <StyledFormErrorMessage name="bookingDate" />
             </RelativeContainer>
             <FormField
               extraClass="textarea"
@@ -75,6 +73,7 @@ const BookingForm = () => {
           </div>
           <div className={css.center}>
             <Button
+              type="submit"
               extraClass={isSubmitting && "disabled"}
               disabled={isSubmitting}
             >

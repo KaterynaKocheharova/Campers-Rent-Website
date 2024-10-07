@@ -5,7 +5,17 @@ import clsx from "clsx";
 import css from "./FormField.module.css";
 
 const FormField = ({ extraClass, ...props }) => {
-  const [field, meta] = useField(props);
+  const [field, meta, helpers] = useField(props);
+
+  const saveToLocalStorage = (name, value) => {
+    localStorage.setItem(name, value);
+  };
+
+  const handleChange = (event) => {
+    const { value } = event.target;
+    saveToLocalStorage(props.name, value);
+    helpers.setValue(value);
+  };
 
   return (
     <RelativeContainer>
@@ -18,6 +28,7 @@ const FormField = ({ extraClass, ...props }) => {
         placeholder={props.placeholder}
         {...field}
         {...props}
+        onChange={handleChange}
       />
       <StyledFormErrorMessage name={props.name} />
     </RelativeContainer>
