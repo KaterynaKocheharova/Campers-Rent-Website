@@ -1,8 +1,8 @@
-CAMPERS
+**#CAMPERS**
 
 This project is dedicated to a camper rental service that allows customers to rent vehicles for their adventures.
 
-Key Features:
+**Key Features:**
 
 Filtering Options: Users can filter available campers by location, vehicle type, and amenities.
 
