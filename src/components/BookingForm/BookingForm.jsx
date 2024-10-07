@@ -67,7 +67,6 @@ const BookingForm = () => {
               />
             </RelativeContainer>
             <FormField
-              style={{ width: "100%" }}
               extraClass="textarea"
               name="comment"
               as="textarea"
