@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import FormField from "../FormField/FormField";
 import { CiCalendar } from "react-icons/ci";
 import "react-datepicker/dist/react-datepicker.css";
-import "./Dtepicker.css";
+import "./Datepicker.css";
 import { registerLocale } from "react-datepicker";
 import { enUS } from "date-fns/locale";
 import { format } from "date-fns";
