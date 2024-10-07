@@ -1,3 +1,7 @@
+.react-datepicker__tab-loop {
+  position: absolute;
+}
+
 .react-datepicker__calendar-icon {
   z-index: 9;
 }

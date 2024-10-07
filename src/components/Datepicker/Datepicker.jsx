@@ -1,4 +1,3 @@
-import { forwardRef } from "react";
 import DatePicker from "react-datepicker";
 import FormField from "../FormField/FormField";
 import { CiCalendar } from "react-icons/ci";
@@ -8,10 +7,15 @@ import { registerLocale } from "react-datepicker";
 import { enUS } from "date-fns/locale";
 import { format } from "date-fns";
 
-const Datepicker = ({ onChange, selected }) => {
-  const CustomInput = forwardRef(({ value, onClick }, ref) => (
-    <FormField name="bookingDate" value={value} onClick={onClick} />
-  ));
+const Datepicker = ({ onChange, selected, className }) => {
+  const CustomInput = ({ value, onClick }) => (
+    <FormField
+      name="bookingDate"
+      value={value}
+      onClick={onClick}
+      extraClass={className}
+    />
+  );
 
   const customLocale = {
     ...enUS,
@@ -37,7 +41,9 @@ const Datepicker = ({ onChange, selected }) => {
       onChange={onChange}
       dateFormat="yyyy/MM/dd"
       placeholderText="Booking date*"
-      customInput={<CustomInput />}
+      customInput={
+        <CustomInput className="react-datepicker__input-container" />
+      }
     />
   );
 };
