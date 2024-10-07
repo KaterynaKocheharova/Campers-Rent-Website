@@ -1,3 +1,7 @@
+.react-datepicker__calendar-icon {
+  z-index: 9;
+}
+
 .react-datepicker__view-calendar-icon input {
   width: 100%;
   padding: 18px;
