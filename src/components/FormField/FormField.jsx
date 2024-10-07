@@ -4,7 +4,7 @@ import RelativeContainer from "../common/RelativeContainer/RelativeContainer";
 import clsx from "clsx";
 import css from "./FormField.module.css";
 
-const FormField = ({ extraClass, ...props }) => {
+const FormField = ({ extraClass, icon, ...props }) => {
   const [field, meta, helpers] = useField(props);
 
   const saveToLocalStorage = (name, value) => {
@@ -30,6 +30,7 @@ const FormField = ({ extraClass, ...props }) => {
         {...props}
         onChange={handleChange}
       />
+      {icon && icon}
       <StyledFormErrorMessage name={props.name} />
     </RelativeContainer>
   );

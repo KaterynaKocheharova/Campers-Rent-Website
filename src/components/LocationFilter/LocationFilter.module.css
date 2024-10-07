@@ -9,28 +9,6 @@
   cursor: pointer;
 }
 
-.input-group {
-  position: relative;
-}
-
-.input {
-  width: 100%;
-  padding-top: 18px;
-  padding-bottom: 14px;
-  padding-left: 46px;
-  border-radius: 12px;
-  background-color: var(--gray);
-  color: var(--main-font-color);
-  border: none;
-  outline: none;
-}
-
-@media screen and (min-width: 500px) and (max-width: 1390px) {
-  .input {
-    width: 50%;
-  }
-}
-
 .map-icon {
   position: absolute;
   width: 20px;
@@ -40,14 +18,8 @@
   top: 16px;
 }
 
-.input::placeholder {
-  color: var(--dark-gray);
-}
-
-.input:focus + svg {
+input:focus + .map-icon,
+input:active + .map-icon {
   fill: var(--main-font-color);
 }
 
-.error-input {
-  border: 1px solid var(--red-light);
-}

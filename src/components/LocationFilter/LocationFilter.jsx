@@ -1,29 +1,29 @@
 import { useId } from "react";
-import { Field } from "formik";
-import StyledFormErrorMessage from "../common/StyledFormErrorMessage/StyledFormErrorMessage";
+import FormField from "../FormField/FormField";
 import css from "./LocationFilter.module.css";
 
 const LocationFilter = () => {
   const filterInputId = useId();
+
+  const icon = (
+    <svg className={css["map-icon"]}>
+      <use href="/sprite.svg#icon-map"></use>
+    </svg>
+  );
 
   return (
     <div className={css["location-group"]}>
       <label className={css.label} htmlFor={filterInputId}>
         Location
       </label>
-      <div className={css["input-group"]}>
-        <Field
-          name="location"
-          className={css.input}
-          id={filterInputId}
-          type="text"
-          placeholder="Kyiv, Ukraine"
-        />
-        <svg className={css["map-icon"]}>
-          <use href="/sprite.svg#icon-map"></use>
-        </svg>
-        <StyledFormErrorMessage name="location" />
-      </div>
+      <FormField
+        extraClass="location-input"
+        name="location"
+        id={filterInputId}
+        type="text"
+        placeholder="Kyiv, Ukraine"
+        icon={icon}
+      />
     </div>
   );
 };
