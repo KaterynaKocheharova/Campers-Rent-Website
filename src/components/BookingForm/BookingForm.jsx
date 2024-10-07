@@ -1,8 +1,6 @@
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import FormField from "../FormField/FormField";
-import StyledFormErrorMessage from "../common/StyledFormErrorMessage/StyledFormErrorMessage";
-import RelativeContainer from "../common/RelativeContainer/RelativeContainer";
 import { activateSuccessToast } from "../../utils/toast";
 import H3Title from "../common/H3Title/H3Title";
 import Text from "../common/Text/Text";
