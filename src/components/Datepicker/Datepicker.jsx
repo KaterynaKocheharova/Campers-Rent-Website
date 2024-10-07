@@ -8,14 +8,9 @@ import { registerLocale } from "react-datepicker";
 import { enUS } from "date-fns/locale";
 import { format } from "date-fns";
 
-const Datepicker = ({ onChange, selected, className }) => {
+const Datepicker = ({ onChange, selected }) => {
   const CustomInput = forwardRef(({ value, onClick }, ref) => (
-    <FormField
-      name="bookingDate"
-      value={value}
-      onClick={onClick}
-      extraClass={className}
-    />
+    <FormField name="bookingDate" value={value} onClick={onClick} />
   ));
 
   const customLocale = {
@@ -42,9 +37,7 @@ const Datepicker = ({ onChange, selected, className }) => {
       onChange={onChange}
       dateFormat="yyyy/MM/dd"
       placeholderText="Booking date*"
-      customInput={
-        <CustomInput className="react-datepicker__input-container" />
-      }
+      customInput={<CustomInput />}
     />
   );
 };
