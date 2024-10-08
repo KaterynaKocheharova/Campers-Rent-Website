@@ -1,4 +1,4 @@
-# **CAMPERS**
+# **CAMPERS RENTAL**
 
 This project is dedicated to a camper rental service that allows customers to rent vehicles for their adventures.
 
