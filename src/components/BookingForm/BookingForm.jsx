@@ -6,15 +6,15 @@ import H3Title from "../common/H3Title/H3Title";
 import Text from "../common/Text/Text";
 import Button from "../common/Button/Button";
 import Datepicker from "../Datepicker/Datepicker";
+import { getItemFromSessionStorage } from "../../utils/sessionStorage";
 import css from "./BookingForm.module.css";
 
 const BookingForm = () => {
-  const date = new Date();
   const initialValues = {
-    name: "",
-    email: "",
-    bookingDate: "",
-    comment: "",
+    name: getItemFromSessionStorage("name") ?? "",
+    email: getItemFromSessionStorage("email") ?? "",
+    bookingDate: getItemFromSessionStorage("bookingDate") ?? "",
+    comment: getItemFromSessionStorage("comment") ?? "",
   };
 
   const validationSchema = Yup.object({

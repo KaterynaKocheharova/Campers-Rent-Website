@@ -7,6 +7,7 @@ import "./Datepicker.css";
 import { registerLocale } from "react-datepicker";
 import { enUS } from "date-fns/locale";
 import { format } from "date-fns";
+import { saveToSessionStorage } from "../../utils/sessionStorage";
 
 const Datepicker = ({ onChange, selected }) => {
   const CustomInput = forwardRef(({ value, onClick }, ref) => (
@@ -39,7 +40,10 @@ const Datepicker = ({ onChange, selected }) => {
       icon={<CiCalendar />}
       toggleCalendarOnIconClick
       selected={selected}
-      onChange={onChange}
+      onChange={(date) => {
+        onChange(date);
+        saveToSessionStorage("bookingDate", date);
+      }}
       dateFormat="yyyy/MM/dd"
       placeholderText="Booking date*"
       customInput={<CustomInput />}
