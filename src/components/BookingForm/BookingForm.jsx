@@ -13,7 +13,7 @@ const BookingForm = () => {
   const initialValues = {
     name: "",
     email: "",
-    bookingDate: date,
+    bookingDate: "",
     comment: "",
   };
 

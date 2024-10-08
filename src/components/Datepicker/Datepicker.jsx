@@ -10,7 +10,12 @@ import { format } from "date-fns";
 
 const Datepicker = ({ onChange, selected }) => {
   const CustomInput = forwardRef(({ value, onClick }, ref) => (
-    <FormField name="bookingDate" value={value} onClick={onClick} />
+    <FormField
+      name="bookingDate"
+      value={value}
+      onClick={onClick}
+      placeholder="Booking date*"
+    />
   ));
 
   const customLocale = {
